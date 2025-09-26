@@ -1,0 +1,212 @@
+[
+  {
+    
+    "id": 1,
+    "name": "Antre Monde Éditions",
+    "role": "Éditeur",
+    "bio": "Éditeur de jeux de société, de jeux de rôle et de romans. univers originaux, rencontres et dédicaces sont prévus sur leur stand.",
+    "photo_path": "photo_exposant\\Antre_mondes_800_424.webp",
+    "slug": "antre-monde-editions",
+    "output_name": "exposant_antre-monde-editions.webp"
+  },
+  {
+    
+    "id": 2,
+    "name": "BGA3D",
+    "role": "Imprimeur 3D",
+    "bio": "BGA 3D est une auto-entreprise passionnée par l’univers du jeu de société et les solutions pratiques pour améliorer l’expérience des joueurs. Spécialisée dans la conception et l’impression 3D d’inserts sur mesure, elle propose des rangements intelligents, durables et esthétiques qui permettent d’organiser parfaitement les composants de chaque jeu.",
+    "photo_path": "photo_exposant/BGA3D_620_600.webp",
+    "slug": "bga3d",
+    "output_name": "exposant_bga3d.webp"
+  },
+  {
+    
+    "id": 3,
+    "name": "Champimo",
+    "role": "Artiste 3D, Couturière et Illustratrices",
+    "bio": "Champimo, sorcière artisane joyeuse, infuse ses créations colorées d’une magie “witchy”, mimi et fantastique",
+    "photo_path": "photo_exposant/champimo_600_600.webp",
+    "slug": "champimo",
+    "output_name": "exposant_champimo.webp"
+  },
+  {
+    
+    "id": 4,
+    "name": "Chocolaterie la Botte Secrète",
+    "role": "Chocolatier",
+    "bio": "Chocolatier artisanal : ganaches, tablettes et gourmandises thématiques. Un voyage chocolaté pour éveiller vos sens.",
+    "photo_path": "photo_exposant/Chocolaterie_botte_secrete_480_600.webp",
+    "slug": "chocolaterie-la-botte-secrete",
+    "output_name": "exposant_chocolaterie-la-botte-secrete.webp"
+  },
+  {
+    
+    "id": 5,
+    "name": "Claudie Charles",
+    "role": "Autrice et Aquarelliste",
+    "bio": "Elle mêle dessin, poésie et humour pour créer des histoires jeunesse qui parlent autant aux petits qu’aux grands.",
+    "photo_path": "photo_exposant/Claudie_charles_600_600.webp",
+    "slug": "claudie-charles",
+    "output_name": "exposant_claudie-charles.webp"
+  },
+  {
+    
+    "id": 6,
+    "name": "Diamant Editions",
+    "role": "Maison D'édition",
+    "bio": "Maison d’édition : rencontres & dédicaces, et un atelier d’écriture pour libérer votre plume.",
+    "photo_path": "photo_exposant/logo_diamant_editions_682_600.webp",
+    "slug": "diamant-editions",
+    "output_name": "exposant_diamant-editions.webp"
+  },
+  {
+    
+    "id": 7,
+    "name": "Fabien Cerutti",
+    "role": "Auteur",
+    "bio": "Aventures et évasion au programme, venez échanger et faire dédicacer vos ouvrages.",
+    "photo_path": "photo_exposant/Fabien_Cerutti_affiche_2_424_600.webp",
+    "slug": "fabien-cerutti",
+    "output_name": "exposant_fabien-cerutti.webp"
+  },
+  {
+    
+    "id": 8,
+    "name": "Foxyn",
+    "role": "Illustratrice",
+    "bio": "Ses illustrations ouvrent des fenêtres sur un monde enchanté, aux teintes chaudes et automnales, dans une ambiance cocooning. Sur son stand : prints, papeterie et petites créations en argile.",
+    "photo_path": "photo_exposant/Foxyn-pins_600_600.webp",
+    "slug": "foxyn",
+    "output_name": "exposant_foxyn.webp"
+  },
+  {
+   
+    "id": 9,
+    "name": "Jacquemin Manon",
+    "role": "Dessinatrice et Peintre",
+    "bio": "Dessinatrice et peintre allant de la culture pop à l'onirique.",
+    "photo_path": "photo_exposant/Manon_jacquemin_800_600.webp",
+    "slug": "jacquemin-manon",
+    "output_name": "exposant_jacquemin-manon.webp"
+  },
+  {
+    
+    "id": 10,
+    "name": "Jay Delado Ocarina",
+    "role": "Cosplayeur et Musicien",
+    "bio": "Cosplayeur et musicien : performances d’ocarina en déambulation, mini-concerts surprenants et ambiance féerique.",
+    "photo_path": "photo_exposant/Jay_delado_600_600.webp",
+    "slug": "jay-delado-ocarina",
+    "output_name": "exposant_jay-delado-ocarina.webp"
+  },
+  {
+    
+    "id": 11,
+    "name": "Julien Destrés",
+    "role": "Auteur",
+    "bio": "Auteur de romans fantastiques mélant différent mondes, mythes et mystères. Échanges et dédicaces au rendez-vous.",
+    "photo_path": "photo_exposant/PHOTOGRAPHIE_STAND_LIVRES_JULIEN_DESTRES_472_600.webp",
+    "slug": "julien-destres",
+    "output_name": "exposant_julien-destres.webp"
+  },
+  {
+    
+    "id": 12,
+    "name": "La Compagnie des Livres",
+    "role": "Librairie",
+    "bio": "Librairie partenaire : conseils, sélections et dédicaces. présence de Fabien Cerutti le samedi.",
+    "photo_path": "photo_exposant/lacompagnie_des_livres_800_600.webp",
+    "slug": "la-compagnie-des-livres",
+    "output_name": "exposant_la-compagnie-des-livres.webp"
+  },
+  {
+    
+    "id": 13,
+    "name": "La passion de patou",
+    "role": "Créatrice d'accessoire en couture",
+    "bio": "Créations couture : accessoires faits main, pratiques et uniques. Trouvez la pièce qui vous ressemble.",
+    "photo_path": "photo_exposant/Passion_de_patou_600_600.webp",
+    "slug": "la-passion-de-patou",
+    "output_name": "exposant_la-passion-de-patou.webp"
+  },
+  {
+    
+    "id": 14,
+    "name": "Laevia",
+    "role": "Créatrice de bijoux",
+    "bio": "Créatrice de bijoux en acier et résine avec inclusions végétales, pièces lumineuses à l’esprit botanique le tout faites main.",
+    "photo_path": "photo_exposant/atelierdelaevia_600_600.webp",
+    "slug": "laevia",
+    "output_name": "exposant_laevia.webp"
+  },
+  {
+    
+    "id": 15,
+    "name": "LANGLOIS Christian",
+    "role": "Artisan de Luminaire",
+    "bio": "Artisan de luminaires : pièces uniques réalisées à partir d’outils anciens dans un esprit steampunk.",
+    "photo_path": "photo_exposant/Christian_Langlois_524_600.webp",
+    "slug": "langlois-christian",
+    "output_name": "exposant_langlois-christian.webp"
+  },
+  {
+   
+    "id": 16,
+    "name": "MoChan",
+    "role": "Artisan au Crochet",
+    "bio": "Artisane du crochet faisant des créations poétiques et colorées faites main. Venez adopter un compagnon tout doux.",
+    "photo_path": "photo_exposant/Mochan_600_600.webp",
+    "slug": "mochan",
+    "output_name": "exposant_mochan.webp"
+  },
+  {
+    
+    "id": 17,
+    "name": "Patch et Pixel",
+    "role": "Artisan du textile brodés",
+    "bio": "Artisanat textile brodé : pièces graphiques et démonstrations au stand. Le fil devient dessin.",
+    "photo_path": "photo_exposant/Patch_et_pixel_600_600.webp",
+    "slug": "patch-et-pixel",
+    "output_name": "exposant_patch-et-pixel.webp"
+  },
+  {
+    
+    "id": 18,
+    "name": "Perdu Ophélie",
+    "role": "Exposante de mosaïques",
+    "bio": "Artisane mosaïste : exposition de mosaïques et initiations à l’origami. venez plier, créer, repartir inspiré.",
+    "photo_path": "photo_exposant/Ophelie_perdu$_800_600.webp",
+    "slug": "perdu-ophelie",
+    "output_name": "exposant_perdu-ophelie.webp"
+  },
+  {
+    
+    "id": 19,
+    "name": "SAKALI Nadia",
+    "role": "Autrice",
+    "bio": "Autrice de romans d’imaginaire médiéval. Rencontres, échanges et dédicaces.",
+    "photo_path": "photo_exposant/sakali_nadia_402_600.webp",
+    "slug": "sakali-nadia",
+    "output_name": "exposant_sakali-nadia.webp"
+  },
+  {
+    
+    "id": 20,
+    "name": "Sterebulle",
+    "role": "Dessinatrice et Peintre",
+    "bio": "Atelier pluridisciplinaire : sculptures bois & résine, peinture, illustration numérique, reliure de grimoires, luminaires et bijoux. Un cabinet de curiosités à ciel ouvert à découvrir sur son stand.",
+    "photo_path": "photo_exposant/sterebulle_600_600.webp",
+    "slug": "sterebulle",
+    "output_name": "exposant_sterebulle.webp"
+  },
+  {
+    
+    "id": 21,
+    "name": "Susie Norman",
+    "role": "Autrice",
+    "bio": "Autrice de romans fantastiques mélant émotions, magie et aventure. Découvrez ses univers sur son stand.",
+    "photo_path": "photo_exposant/visuel_presentation_716_600.webp",
+    "slug": "susie-norman",
+    "output_name": "exposant_susie-norman.webp"
+  }
+]

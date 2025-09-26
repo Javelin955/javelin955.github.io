@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Salon de l’Imaginaire et du Jeu 2025 à Vernon (Espace Philippe-Auguste) — 4 & 5 Octobre 2025. Découvrez le programme, les invités, les exposants et les animations de cette édition !">
+  <title>Salon de l’Imaginaire 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      /* Palette Salon de l’Imaginaire */
+      --color-blue: #0A5A83;
+      /* principal (boutons, liens, hero) */
+      --color-beige: #F2E8B3;
+      /* fond site (sections claires) */
+      --color-beige2: #f5f1dc;
+      /* fond cartes doux (variante) */
+      --color-green: #163A30;
+      /* sombre (texte, header) */
+      --color-accent: #BBBF3B;
+      /* accent (liserés, badges) */
+      --color-brown: #401E12;
+      /* texte accent/CTA */
+
+      /* Utilitaires */
+      --color-white: #ffffff;
+      --color-black: #0b0b0b;
+      /* largeur de carte : fixe par breakpoint (mobile ne grossit pas) */
+    --cw: 260px;                /* mobile */
+    --imgR: 4/3;                /* ratio image (change en 1/1 si tu veux) */
+  }
+  @media (min-width: 768px){ :root{ --cw: 280px; } }     /* tablette */
+  @media (min-width:1280px){ :root{ --cw: 300px; } }     /* desktop */
+
+  /* dérivés calculés UNIQUEMENT depuis --cw */
+  .card-col   { flex: 0 0 var(--cw); width: var(--cw); }
+  .card-box   { width: min(var(--cw), 100%); }
+  .card-media { aspect-ratio: var(--imgR); }
+  /* 220/575 ≈ 0.3826 : hauteur de la zone texte (bio) proportionnelle à --cw */
+  .card-text  { height: calc(var(--cw) * 0.3826); overflow: hidden; }
+
+  /* clamp utilitaires (si besoin ailleurs) */
+  .clamp-1{ display:-webkit-box; line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
+  .clamp-2{ display:-webkit-box; line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  </style>
+</head>
+
+<script type="module" src="exposants_gallery.js"></script>
+<!-- Menu Burger -->
+<!-- Script déplacé après le header/navigation pour garantir que les éléments existent -->
+
+
+<body class="relative text-[var(--color-green)] font-sans">
+
+
+  <!-- Fond flouté + parallaxe vertical -->
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <img src="Salon_de_limaginaire_2025_1.png" alt=""
+      class="absolute left-1/2 -translate-x-1/2 w-[100vw] h-[200vh]  object-cover will-change-transform" data-parallax
+      data-speed="0.5" />
+    <div class="absolute inset-0 bg-[var(--color-blue)]/20 pointer-events-none"></div>
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-[var(--color-green)] backdrop-blur text-[var(--color-beige)] shadow-md">
+    <div class="container mx-auto p-4 flex items-center justify-between">
+      <a href="#" class="text-xl sm:text-2xl font-bold tracking-wide">Salon de l’Imaginaire et du Jeu</a>
+
+      <!-- Bouton burger -->
+      <button id="nav-toggle"
+        class="md:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+        aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <!-- Navigation -->
+      <nav id="nav-menu"
+        class="hidden flex-col items-center gap-6 absolute left-0 right-0 top-full
+                bg-[var(--color-green)] border-t border-white/10 px-4 py-3 z-50 md:static md:flex md:flex-row md:bg-transparent md:border-0 md:px-0 md:py-0">
+        <a href="#programme" class="block py-2 hover:text-[var(--color-accent)]">Programme</a>
+        <a href="#a-propos" class="block py-2 hover:text-[var(--color-accent)]">Le salon</a>
+        <a href="#invites" class="block py-2 hover:text-[var(--color-accent)]">Invités</a>
+        <a href="#infos" class="block py-2 hover:text-[var(--color-accent)]">Infos pratiques</a>
+        <a href="#galerie" class="block py-2 hover:text-[var(--color-accent)]">Galerie</a>
+      </nav>
+    </div>
+
+    <!-- Overlay mobile (clic pour fermer) -->
+    <div id="nav-backdrop" class="hidden md:hidden fixed inset-0 z-40 bg-black/40"></div>
+  </header>
+
+  <script>
+    (() => {
+      const btn = document.getElementById('nav-toggle');
+      const menu = document.getElementById('nav-menu');
+      const ovl = document.getElementById('nav-backdrop');
+
+      if (!btn || !menu || !ovl) return;
+
+      const close = () => {
+        menu.classList.add('hidden');
+        ovl.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('overflow-hidden');
+      };
+
+      const open = () => {
+        menu.classList.remove('hidden');
+        ovl.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('overflow-hidden'); // lock scroll en mobile
+      };
+
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        expanded ? close() : open();
+      });
+
+      // Ferme au clic sur un lien de la nav (en mobile)
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          if (window.innerWidth < 1020) close();
+        });
+      });
+
+      // Ferme au clic sur l’overlay ou avec Échap
+      ovl.addEventListener('click', close);
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+      // Sécurise à la bascule responsive (si on remet la fenêtre en grand)
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1020) {
+          // en desktop, on enlève l’overlay et on débloque le scroll
+          ovl.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+          // la nav est gérée par 'md:flex' (elle s'affiche même si 'hidden' est présent)
+        } else {
+          // En mobile/tablette, on s'assure que le menu burger est bien caché si besoin
+          close();
+        }
+      });
+    })();
+  </script>
+  <style>
+    /* Utilise le même breakpoint que le JS (1020px) */
+    @media (min-width: 1020px) {
+      #nav-toggle {
+        display: none !important;
+      }
+
+      #nav-menu {
+        display: flex !important;
+        position: static !important;
+        background: transparent !important;
+        border: 0 !important;
+        padding: 0 !important;
+      }
+
+      #nav-backdrop {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 1019.98px) {
+      #nav-toggle {
+        display: inline-flex !important;
+      }
+
+      #nav-menu {
+        display: none !important;
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: var(--color-green);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 50;
+      }
+
+      #nav-menu:not(.hidden) {
+        display: flex !important;
+        flex-direction: column;
+      }
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="relative isolate text-[var(--color-beige)] text-center min-h-[53vh] flex flex-col items-center justify-center
+         px-4 sm:px-6 md:px-8">
+    <div class="relative z-10 w-full max-w-[900px] mx-auto rounded-xl
+           p-6 sm:p-8 md:p-10 shadow-lg backdrop-blur
+           bg-[rgba(22,58,48,0.80)]">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+        Salon de l’Imaginaire et du Jeu 2025
+      </h2>
+      <p class="text-base sm:text-lg md:text-2xl mb-6">
+        4 & 5 Octobre 2025 – Vernon (27200)
+      </p>
+      <a href="#programme" class="inline-flex mt-1 bg-[var(--color-accent)] text-[var(--color-brown)]
+              px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#a7ad30] transition
+              pointer-events-auto">
+        Découvrir le programme
+      </a>
+    </div>
+  </section>
+
+
+
+  <!-- À PROPOS (essentiel) -->
+  <section id="a-propos" class="container mx-auto px-[5%] py-14 max-w-full">
+    <article class="p-6 bg-white rounded-2xl shadow-md border-l-4 border-[var(--color-accent)]">
+      <h3 class="text-2xl sm:text-3xl md:text-3xl font-bold text-[var(--color-blue)] mb-3">
+        Le Salon de l’Imaginaire et du Jeu
+      </h3>
+      <p class="text-[15px] sm:text-base md:text-lg leading-normal sm:leading-relaxed text-[var(--color-green)]">
+        Bienvenue au <strong>Salon de l'Imaginaire et du Jeu</strong> ! C'est un <strong>événement gratuit</strong>
+        pendant 2 jours qui réunit <strong>auteurs</strong>, <strong>illustrateurs</strong>,
+        <strong>artisans-créateurs</strong> et <strong>associations ludiques</strong> de la région
+        <strong>Normandie</strong>.
+        Dans ce salon, vous trouverez différents univers et animations qui se présenteront sous la forme de
+        <strong>stands</strong>, de <strong>dédicaces</strong>, de <strong>démonstrations</strong> et
+        d'<strong>ateliers</strong> (écriture, dessin, peinture sur figurine, jeux de société, jeux de cartes et jeux de
+        figurine).
+        Que vous soyez passionné de <strong>fantasy</strong>, de <strong>science-fiction</strong>, de <strong>jeux de
+          rôle</strong> ou simplement curieux de découvrir de nouveaux horizons, le Salon de l'Imaginaire et du Jeu est
+        l'endroit idéal pour vous immerger dans des mondes fascinants et rencontrer des <strong>créateurs
+          talentueux</strong>.
+      </p>
+    </article>
+  </section>
+
+
+  <!-- PROGRAMME -->
+  <section id="programme" class="container px-[5%] py-8 bg-[var(--color-beige)] backdrop-blur-sm max-w-full">
+    <h3 class="text-3xl font-bold text-[var(--color-brown)] mb-8">Au programme cette année</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- ANIMATIONS -->
+      <div class="p-6 bg-white rounded-2xl shadow-md border-l-4 border-[var(--color-accent)]">
+        <h4 class="font-bold text-xl mb-3 text-[var(--color-blue)]"> Animations & parties</h4>
+        <ul class="space-y-3 text-[15px] leading-relaxed">
+          <!-- Les 2 jours — JdR -->
+          <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
+            <span class="inline-flex px-2 py-0.5 rounded-full text-xs font-semibold
+                 bg-[var(--color-blue)] text-[var(--color-beige)]
+                 shrink-0 whitespace-nowrap mb-1 md:mb-0">
+              Les 2 jours
+            </span>
+            <div><strong>Initiation au jeu de rôle</strong> — scénarios courts, matériel fourni, accompagnement pas à
+              pas.</div>
+          </li>
+
+          <!-- Les 2 jours — Jeux de société -->
+          <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
+            <span class="inline-flex px-2 py-0.5 rounded-full text-xs font-semibold
+                 bg-[var(--color-blue)] text-[var(--color-beige)]
+                 shrink-0 whitespace-nowrap mb-1 md:mb-0">
+              Les 2 jours
+            </span>
+            <div><strong>Jeux de société</strong> — tables de démonstration et parties libres, encadrées par des
+              associations ludiques.</div>
+          </li>
+
+          <!-- Samedi — Magic -->
+          <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
+            <span class="inline-flex px-2 py-0.5 rounded-full text-xs font-semibold
+                 bg-[var(--color-blue)] text-[var(--color-beige)]
+                 shrink-0 whitespace-nowrap mb-1 md:mb-0">
+              Samedi
+            </span>
+            <div>
+              <strong class="whitespace-nowrap">Magic&nbsp;: Scellé Chaos</strong>
+              — <em class="not-italic">13h30</em> • <strong>16 places</strong> (inscription sur place).
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- ATELIERS -->
+      <div class="p-6 bg-white rounded-2xl shadow-md border-l-4 border-[var(--color-accent)]">
+        <h4 class="font-bold text-xl mb-3 text-[var(--color-blue)]"> Ateliers créatifs</h4>
+        <ul class="space-y-3 text-[15px] leading-relaxed">
+          <li class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2">
+            <span class="px-2 py-0.5 rounded-full text-xs font-semibold
+               bg-[var(--color-blue)] text-[var(--color-beige)]
+               mb-1 md:mb-0">
+              Samedi
+            </span>
+            <strong>Couture & pixel-art</strong> — mini-séances, créneaux affichés sur place.
+          </li>
+          <li class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2">
+            <span class="px-2 py-0.5 rounded-full text-xs font-semibold
+               bg-[var(--color-blue)] text-[var(--color-beige)]
+               mb-1 md:mb-0">
+              Dimanche
+            </span><strong>Initiation peinture sur figurine</strong> — matériel fourni, accompagnement pas à pas.</span>
+          </li>
+          <li class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2">
+            <span class="px-2 py-0.5 rounded-full text-xs font-semibold
+               bg-[var(--color-blue)] text-[var(--color-beige)]
+               mb-1 md:mb-0">
+              Dimanche
+            </span><strong>Atelier d’écriture</strong> — prompts, conseils, et un texte court à la clé.</span>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- Encarts pratiques -->
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div class="p-5 bg-white rounded-2xl shadow-md border border-black/5 text-[15px]">
+        <strong>Restauration sur place</strong> au profit de l’association <em>J’Existe</em> — options salées &
+        sucrées toute la journée.
+      </div>
+      <div class="p-5 bg-white rounded-2xl shadow-md border border-black/5 text-[15px]">
+        <strong>Tombola</strong> — lots offerts par exposants & partenaires, tirages dans la journée (infos à
+        l’accueil).
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- INVITES -->
+  <!-- Titre -->
+  <div class="flex items-center justify-between bg-[var(--color-green)] text-[var(--color-beige)] px-[5%] py-8">
+    <h3 class="text-3xl font-bold ">À l’honneur cette année</h3>
+  </div>
+
+  <section id="invites" class="bg-[var(--color-green)] text-[var(--color-beige)] ">
+    <div class="container mx-auto">
+
+      <!-- CARROUSEL -->
+      <div id="carousel" class="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="overflow-hidden rounded-xl">
+          <div id="carousel-track" class="flex transition-transform duration-500 ease-out will-change-transform"
+            style="transform: translateX(0%);">
+            <!-- pages injectées en JS -->
+          </div>
+        </div>
+
+        <!-- Flèche GAUCHE -->
+        <button id="btn-prev" class="group absolute inset-y-0 left-0 my-auto -translate-x-1/2 md:translate-x-0 z-20
+                     w-12 h-12 md:w-14 md:h-14 rounded-full bg-[var(--color-accent)] text-white
+                     shadow-lg backdrop-blur-sm cursor-pointer
+                     transition duration-200 hover:bg-[#0C6B9F] hover:scale-105 hover:shadow-xl
+                     active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]
+                     disabled:opacity-40 disabled:pointer-events-none mx-8" aria-label="Précédent" title="Précédent">
+          <svg class="w-6 h-6 md:w-7 md:h-7 mx-auto" viewBox="0 0 24 24" fill="none" stroke="var(--color-brown)"
+            stroke-width="2">
+            <polyline points="15 18 9 12 15 6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </button>
+
+        <!-- Flèche DROITE -->
+        <button id="btn-next" class="group absolute inset-y-0 right-0 my-auto translate-x-1/2 md:translate-x-0 z-20
+                     w-12 h-12 md:w-14 md:h-14 rounded-full bg-[var(--color-accent)] text-white
+                     shadow-lg backdrop-blur-sm cursor-pointer
+                     transition duration-200 hover:bg-[#0C6B9F] hover:scale-105 hover:shadow-xl
+                     active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]
+                     disabled:opacity-40 disabled:pointer-events-none mx-8" aria-label="Suivant" title="Suivant">
+          <svg class="w-6 h-6 md:w-7 md:h-7 mx-auto" viewBox="0 0 24 24" fill="none" stroke="var(--color-brown)"
+            stroke-width="2">
+            <polyline points="9 18 15 12 9 6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- VUE “TOUS”-->
+      <div id="all-grid"
+        class="hidden mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 xl:gap-8 mx-4 md:mx-8 xl:mx-12">
+        <!-- cartes injectées par JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTON AFFICHER TOUS -->
+  <div class="text-center  bg-[var(--color-green)] py-4">
+    <button id="btn-all"
+      class="inline-flex items-center gap-2 rounded-lg px-5 py-3 bg-[var(--color-accent)] text-[var(--color-brown)] font-semibold hover:brightness-95 transition">
+      Afficher tous les exposants
+    </button>
+  </div>
+
+  <!-- INFOS -->
+  <section id="infos" class="container mx-auto py-8 bg-[var(--color-beige)] px-[5%] max-w-full">
+    <h3 class="text-3xl font-bold text-[var(--color-blue)] mb-6">Infos pratiques</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+      <!-- Colonne GAUCHE : texte -->
+      <div class="p-6 bg-white rounded-2xl shadow-md border-l-4 border-[var(--color-accent)] flex items-center">
+        <ul class="space-y-4 text-lg grid items-center w-full">
+          <li><strong>Lieu :</strong> Espace Philippe-Auguste, Vernon (27200)</li>
+          <li><strong>Horaires :</strong> 10h – 18h (4–5 octobre 2025)</li>
+          <li><strong>Tarifs :</strong> Entrée libre</li>
+          <li><strong>Accès :</strong> Gare de Vernon–Giverny → 10 min à pied • Parking à proximité</li>
+        </ul>
+      </div>
+
+      <!-- Colonne DROITE : carte -->
+      <div class="rounded-2xl overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.6269847979634!2d1.4804711768567678!3d49.09372828411567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6cbe7350dd6f3%3A0xab7eac2809e87873!2sEspace%20Philippe-Auguste!5e0!3m2!1sfr!2sfr!4v1758846650875!5m2!1sfr!2sfr"
+          class="w-full h-[240px] md:h-full min-h-[240px] border-0" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie" class="bg-[var(--color-green)] py-16">
+    <div class="container mx-auto px-[5%]">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-3xl font-bold text-[var(--color-beige)]">Galerie — éditions précédentes</h3>
+        <span class="text-sm text-[var(--color-beige)]/70">Cliquez pour agrandir</span>
+      </div>
+
+      <!-- Grille responsive -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- EXEMPLES : remplace par tes fichiers -->
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img src="galerie_anciennes_années/salon_de_limaginaire_2024_4032_2268_800_450.webp" alt="Salon 2024"
+            class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105" loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_cosplay_2268_4032_338_600.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img src="galerie_anciennes_années/salon_de_limaginaire_2024_cosplay_2268_4032_338_600.webp" alt="Salon 2024"
+            class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105" loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_demo_jeux_de_société_2160_3840_338_600.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img src="galerie_anciennes_années/salon_de_limaginaire_2024_demo_jeux_de_société_2160_3840_338_600.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_essai_jeux_de_société_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img src="galerie_anciennes_années/salon_de_limaginaire_2024_essai_jeux_de_société_4032_2268_800_450.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_essai_jeux_de_société_rempli_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img
+            src="galerie_anciennes_années/salon_de_limaginaire_2024_essai_jeux_de_société_rempli_4032_2268_800_450.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img src="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_4032_2268_800_450.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_3_2268_4032_338_600.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img
+            src="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_3_2268_4032_338_600.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_4_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img
+            src="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_4_4032_2268_800_450.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_2_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img
+            src="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_2_4032_2268_800_450.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_5_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img
+            src="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_5_4032_2268_800_450.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_toto_bonne_ambiance_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img
+            src="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_toto_bonne_ambiance_4032_2268_800_450.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_jeux_de_société_4032_2268_800_450.webp"
+          class="group relative block overflow-hidden rounded-2xl">
+          <img src="galerie_anciennes_années/salon_de_limaginaire_2024_jeux_de_société_4032_2268_800_450.webp"
+            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
+            loading="lazy">
+        </a>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 hidden z-[60] bg-black/80 items-center justify-center p-4">
+      <button id="lb-close" class="absolute top-4 right-4 text-white text-2xl" aria-label="Fermer">✕</button>
+      <img id="lb-img" src="" alt="" class="max-w-[90vw] max-h-[85vh] rounded-xl shadow-2xl">
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      const grid = document.getElementById('gallery-grid');
+      const box = document.getElementById('lightbox');
+      const img = document.getElementById('lb-img');
+      const close = document.getElementById('lb-close');
+
+      if (!grid || !box || !img) return;
+
+      grid.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href]');
+        if (!a) return;
+        e.preventDefault();
+        img.src = a.getAttribute('href');
+        box.classList.remove('hidden'); box.classList.add('flex');
+      });
+      const hide = () => { box.classList.add('hidden'); box.classList.remove('flex'); img.src = ''; };
+      close.addEventListener('click', hide);
+      box.addEventListener('click', (e) => { if (e.target === box) hide(); });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
+    })();
+  </script>
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[var(--color-brown)] text-[var(--color-beige)]">
+    <div class="container mx-auto px-[5%] py-10">
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- Bloc 1 : identité -->
+        <div>
+          <h4 class="text-xl font-bold">Salon de l’Imaginaire et du Jeu </h4>
+          <p class="mt-2 text-sm opacity-90">
+            Espace Philippe-Auguste — Vernon (27200)<br>
+            4–5 octobre 2025 • 10h–18h
+          </p>
+          <p class="mt-3 text-sm">
+            <a href="mailto:salondelimaginaire@gmail.com"
+              class="underline decoration-[var(--color-accent)] decoration-2 underline-offset-2 hover:text-[var(--color-accent)]">
+              salondelimaginaire@gmail.com
+            </a>
+          </p>
+        </div>
+
+        <!-- Bloc 2 : navigation rapide -->
+        <nav class="grid grid-cols-2 gap-2 text-sm">
+          <a href="#programme" class="hover:text-[var(--color-accent)] scroll-link">Programme</a>
+          <a href="#invites" class="hover:text-[var(--color-accent)] scroll-link">Invités</a>
+          <a href="#infos" class="hover:text-[var(--color-accent)] scroll-link">Infos pratiques</a>
+          <a href="#galerie" class="hover:text-[var(--color-accent)] scroll-link">Galerie</a>
+          <a href="#carte" class="hover:text-[var(--color-accent)] scroll-link">Plan d’accès</a>
+        </nav>
+        <script>
+          // Décale l'apparition de la section cible sous le header lors du clic sur un lien de navigation
+          document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+              const href = this.getAttribute('href');
+              if (!href.startsWith('#')) return;
+              const target = document.querySelector(href);
+              if (!target) return;
+              e.preventDefault();
+              const header = document.querySelector('header');
+              const offset = header ? header.offsetHeight + 24 : 24; // 24px de marge visuelle
+              const top = target.getBoundingClientRect().top + window.scrollY - offset;
+              window.scrollTo({ top, behavior: 'smooth' });
+            });
+          });
+        </script>
+
+        <!-- Bloc 3 : réseaux -->
+        <div>
+          <p class="text-sm mb-3">Suivez-nous</p>
+          <div class="flex items-center gap-3">
+            <!-- Icônes SVG minimalistes -->
+            <a href="https://www.facebook.com/salondelimaginaire" aria-label="Facebook"
+              class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13.5 9H15V6h-1.5C11.57 6 10 7.57 10 9.5V11H8v3h2v7h3v-7h2.1l.4-3H13v-1.5c0-.28.22-.5.5-.5z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-6 border-white/10">
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-xs opacity-80">
+        <p>© 2025 Salon de l’Imaginaire et du Jeu</p>
+        <ul class="flex flex-wrap gap-4">
+          <li><a href="/mention_legale.html" class="hover:text-[var(--color-accent)]">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <!-- Parallaxe verticale de l’image de fond -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const img = document.querySelector('[data-parallax]');
+      if (!img) return;
+
+      const speed = parseFloat(img.dataset.speed || 1); // 1 = même vitesse que la page
+
+      function update() {
+        const vh = window.innerHeight;
+        const travel = Math.max(0, img.offsetHeight - vh); // marge exploitable (ex: 20vh)
+        const y = window.scrollY || document.documentElement.scrollTop || 0;
+
+        // On veut voir le HAUT au chargement, puis révéler le BAS en scrollant :
+        // l'image "monte" (offset négatif) en même temps que la page.
+        const off = -Math.min(y * speed, travel);
+
+        // Conserve le centrage horizontal (-50% en X)
+        img.style.transform = `translate3d(-50%, ${off}px, 0)`;
+      }
+
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    });
+  </script>
+
+
+</body>
+
+</html>
