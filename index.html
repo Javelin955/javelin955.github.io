@@ -2,25 +2,41 @@
 <html lang="fr">
 
 <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TCWLZGKG');</script>
+<!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Salon de l’Imaginaire et du Jeu 2025 à Vernon (Espace Philippe-Auguste) — 4 & 5 Octobre 2025. Découvrez le programme, les invités, les exposants et les animations de cette édition !">
-  <title>Salon de l’Imaginaire 2025</title>
+    content="Salon de l’Imaginaire et du Jeu 2025 à Vernon (Espace Philippe-Auguste) — 4 et 5 Octobre 2025. Découvrez le programme, les invités, les exposants et les animations de cette édition !">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#305a83">
+  <meta property="og:title" content="Salon de l’Imaginaire et du Jeu 2025">
+  
+    <title>Salon de l’Imaginaire et du Jeu 2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     :root {
       /* Palette Salon de l’Imaginaire */
-      --color-blue: #0A5A83;
+      --color-blue: #305a83;
       /* principal (boutons, liens, hero) */
-      --color-beige: #F2E8B3;
+      --color-beige: #f5f1dc;
       /* fond site (sections claires) */
       --color-beige2: #f5f1dc;
       /* fond cartes doux (variante) */
-      --color-green: #163A30;
+      --color-green: #465c40;
       /* sombre (texte, header) */
       --color-accent: #BBBF3B;
       /* accent (liserés, badges) */
@@ -31,22 +47,114 @@
       --color-white: #ffffff;
       --color-black: #0b0b0b;
       /* largeur de carte : fixe par breakpoint (mobile ne grossit pas) */
-    --cw: 260px;                /* mobile */
-    --imgR: 4/3;                /* ratio image (change en 1/1 si tu veux) */
-  }
-  @media (min-width: 768px){ :root{ --cw: 280px; } }     /* tablette */
-  @media (min-width:1280px){ :root{ --cw: 300px; } }     /* desktop */
+      --cw: 260px;
+      /* mobile */
+      --imgR: 4/3;
+    }
 
-  /* dérivés calculés UNIQUEMENT depuis --cw */
-  .card-col   { flex: 0 0 var(--cw); width: var(--cw); }
-  .card-box   { width: min(var(--cw), 100%); }
-  .card-media { aspect-ratio: var(--imgR); }
-  /* 220/575 ≈ 0.3826 : hauteur de la zone texte (bio) proportionnelle à --cw */
-  .card-text  { height: calc(var(--cw) * 0.3826); overflow: hidden; }
+      /* ratio image (change en 1/1 si tu veux) */
+      @font-face {
+        font-family: 'More Sugar';
+        src: url('font/MoreSugar-Thin.otf') format('opentype');
+        /* ou '/font/...' selon ton hébergement */
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
 
-  /* clamp utilitaires (si besoin ailleurs) */
-  .clamp-1{ display:-webkit-box; line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
-  .clamp-2{ display:-webkit-box; line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+      @font-face {
+        font-family: 'More Sugar';
+        src: url('font/MoreSugar-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* === Variables typographiques === */
+      :root {
+        --ff-main: 'More Sugar', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        --fw-text: 300;
+        /* Thin pour le texte courant */
+        --fw-title: 400;
+        /* Regular pour titres et <strong> */
+        --ls-tight: 0.01em;
+        /* (optionnel) tracking léger */
+      }
+
+      /* === Application globale === */
+      html,
+      body {
+        font-family: var(--ff-main);
+      }
+
+      body {
+        font-weight: var(--fw-text);
+        letter-spacing: var(--ls-tight);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Titres et gras en Regular */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      strong,
+      b {
+        font-weight: var(--fw-title);
+      }
+
+    @media (min-width: 768px) {
+      :root {
+        --cw: 280px;
+      }
+    }
+
+    /* tablette */
+    @media (min-width:1280px) {
+      :root {
+        --cw: 300px;
+      }
+    }
+
+    /* desktop */
+
+    /* dérivés calculés UNIQUEMENT depuis --cw */
+    .card-col {
+      flex: 0 0 var(--cw);
+      width: var(--cw);
+    }
+
+    .card-box {
+      width: min(var(--cw), 100%);
+    }
+
+    .card-media {
+      aspect-ratio: var(--imgR);
+    }
+
+    /* 220/575 ≈ 0.3826 : hauteur de la zone texte (bio) proportionnelle à --cw */
+    .card-text {
+      height: calc(var(--cw) * 0.3826);
+      overflow: hidden;
+    }
+
+    /* clamp utilitaires (si besoin ailleurs) */
+    .clamp-1 {
+      display: -webkit-box;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .clamp-2 {
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
   </style>
 </head>
 
@@ -55,7 +163,12 @@
 <!-- Script déplacé après le header/navigation pour garantir que les éléments existent -->
 
 
-<body class="relative text-[var(--color-green)] font-sans">
+<body class="relative text-[var(--color-green)]">
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCWLZGKG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 
   <!-- Fond flouté + parallaxe vertical -->
@@ -70,7 +183,7 @@
   <!-- HEADER -->
   <header class="sticky top-0 z-50 bg-[var(--color-green)] backdrop-blur text-[var(--color-beige)] shadow-md">
     <div class="container mx-auto p-4 flex items-center justify-between">
-      <a href="#" class="text-xl sm:text-2xl font-bold tracking-wide">Salon de l’Imaginaire et du Jeu</a>
+      <a href="#" class="text-xl sm:text-2xl  tracking-wide">Salon de l’Imaginaire et du Jeu</a>
 
       <!-- Bouton burger -->
       <button id="nav-toggle"
@@ -84,12 +197,14 @@
       <!-- Navigation -->
       <nav id="nav-menu"
         class="hidden flex-col items-center gap-6 absolute left-0 right-0 top-full
-                bg-[var(--color-green)] border-t border-white/10 px-4 py-3 z-50 md:static md:flex md:flex-row md:bg-transparent md:border-0 md:px-0 md:py-0">
-        <a href="#programme" class="block py-2 hover:text-[var(--color-accent)]">Programme</a>
-        <a href="#a-propos" class="block py-2 hover:text-[var(--color-accent)]">Le salon</a>
-        <a href="#invites" class="block py-2 hover:text-[var(--color-accent)]">Invités</a>
-        <a href="#infos" class="block py-2 hover:text-[var(--color-accent)]">Infos pratiques</a>
-        <a href="#galerie" class="block py-2 hover:text-[var(--color-accent)]">Galerie</a>
+        bg-[var(--color-green)] border-t border-white/10 px-4 py-3 z-50 md:static md:flex md:flex-row md:bg-transparent md:border-0 md:px-0 md:py-0">
+        <ul class="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
+          <li><a href="#programme" class="block py-2 text-xl sm:text-2xl hover:text-[var(--color-accent)]">Programme</a></li>
+          <li><a href="#a-propos" class="block py-2 text-xl sm:text-2xl hover:text-[var(--color-accent)]">Le salon</a></li>
+          <li><a href="#invites" class="block py-2 text-xl sm:text-2xl hover:text-[var(--color-accent)]">Invités</a></li>
+          <li><a href="#infos" class="block py-2 text-xl sm:text-2xl hover:text-[var(--color-accent)]">Infos pratiques</a></li>
+          <li><a href="#galerie" class="block py-2 text-xl sm:text-2xl hover:text-[var(--color-accent)]">Galerie</a></li>
+        </ul>
       </nav>
     </div>
 
@@ -202,7 +317,7 @@
         Salon de l’Imaginaire et du Jeu 2025
       </h2>
       <p class="text-base sm:text-lg md:text-2xl mb-6">
-        4 & 5 Octobre 2025 – Vernon (27200)
+        4 et 5 Octobre 2025 – Vernon (27200)
       </p>
       <a href="#programme" class="inline-flex mt-1 bg-[var(--color-accent)] text-[var(--color-brown)]
               px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#a7ad30] transition
@@ -224,7 +339,7 @@
         Bienvenue au <strong>Salon de l'Imaginaire et du Jeu</strong> ! C'est un <strong>événement gratuit</strong>
         pendant 2 jours qui réunit <strong>auteurs</strong>, <strong>illustrateurs</strong>,
         <strong>artisans-créateurs</strong> et <strong>associations ludiques</strong> de la région
-        <strong>Normandie</strong>.
+        <strong>Normandie à Vernon</strong>.
         Dans ce salon, vous trouverez différents univers et animations qui se présenteront sous la forme de
         <strong>stands</strong>, de <strong>dédicaces</strong>, de <strong>démonstrations</strong> et
         d'<strong>ateliers</strong> (écriture, dessin, peinture sur figurine, jeux de société, jeux de cartes et jeux de
@@ -244,42 +359,51 @@
     <div class="grid md:grid-cols-2 gap-8">
       <!-- ANIMATIONS -->
       <div class="p-6 bg-white rounded-2xl shadow-md border-l-4 border-[var(--color-accent)]">
-        <h4 class="font-bold text-xl mb-3 text-[var(--color-blue)]"> Animations & parties</h4>
+        <h4 class="font-bold text-xl mb-3 text-[var(--color-blue)]"> Animations et parties</h4>
         <ul class="space-y-3 text-[15px] leading-relaxed">
           <!-- Les 2 jours — JdR -->
           <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
-            <span class="inline-flex px-2 py-0.5 rounded-full text-xs font-semibold
+            <span class="inline-flex px-2 py-0.5 rounded-full text-s 
                  bg-[var(--color-blue)] text-[var(--color-beige)]
                  shrink-0 whitespace-nowrap mb-1 md:mb-0">
               Les 2 jours
             </span>
-            <div><strong>Initiation au jeu de rôle</strong> — scénarios courts, matériel fourni, accompagnement pas à
-              pas.</div>
+            <div>
+              <p class="text-base" style="font-size:16px;">
+                <strong>Initiation au jeu de rôle</strong>
+                <span> — scénarios courts, matériel fourni, accompagnement pas à pas.</span>
+              </p>
+            </div>
           </li>
 
           <!-- Les 2 jours — Jeux de société -->
           <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
-            <span class="inline-flex px-2 py-0.5 rounded-full text-xs font-semibold
+            <span class="inline-flex px-2 py-0.5 rounded-full text-s 
                  bg-[var(--color-blue)] text-[var(--color-beige)]
                  shrink-0 whitespace-nowrap mb-1 md:mb-0">
               Les 2 jours
             </span>
-            <div><strong>Jeux de société</strong> — tables de démonstration et parties libres, encadrées par des
-              associations ludiques.</div>
-          </li>
-
-          <!-- Samedi — Magic -->
-          <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
-            <span class="inline-flex px-2 py-0.5 rounded-full text-xs font-semibold
-                 bg-[var(--color-blue)] text-[var(--color-beige)]
-                 shrink-0 whitespace-nowrap mb-1 md:mb-0">
-              Samedi
-            </span>
             <div>
-              <strong class="whitespace-nowrap">Magic&nbsp;: Scellé Chaos</strong>
-              — <em class="not-italic">13h30</em> • <strong>16 places</strong> (inscription sur place).
+              <p class="text-base" style="font-size:16px;">
+                <strong>Jeux de société</strong>
+                <span> : tables de démonstration et parties libres, encadrées par des associations.</span>
+              </p>
             </div>
-          </li>
+
+            <!-- Samedi — Magic -->
+            <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
+              <span class="inline-flex px-2 py-0.5 rounded-full text-s 
+               bg-[var(--color-blue)] text-[var(--color-beige)]
+               shrink-0 whitespace-nowrap mb-1 md:mb-0">
+              Samedi
+              </span>
+              <div>
+              <p class="text-base" style="font-size:16px;">
+                <strong class="whitespace-nowrap">Magic: Scellé Chaos</strong>
+                <span> — <em class="not-italic">13h30</em> • <strong>16 places</strong> (inscription sur place).</span>
+              </p>
+              </div>
+            </li>
         </ul>
 
       </div>
@@ -288,28 +412,45 @@
       <div class="p-6 bg-white rounded-2xl shadow-md border-l-4 border-[var(--color-accent)]">
         <h4 class="font-bold text-xl mb-3 text-[var(--color-blue)]"> Ateliers créatifs</h4>
         <ul class="space-y-3 text-[15px] leading-relaxed">
-          <li class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2">
-            <span class="px-2 py-0.5 rounded-full text-xs font-semibold
-               bg-[var(--color-blue)] text-[var(--color-beige)]
-               mb-1 md:mb-0">
-              Samedi
-            </span>
-            <strong>Couture & pixel-art</strong> — mini-séances, créneaux affichés sur place.
-          </li>
-          <li class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2">
-            <span class="px-2 py-0.5 rounded-full text-xs font-semibold
-               bg-[var(--color-blue)] text-[var(--color-beige)]
-               mb-1 md:mb-0">
-              Dimanche
-            </span><strong>Initiation peinture sur figurine</strong> — matériel fourni, accompagnement pas à pas.</span>
-          </li>
-          <li class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-2">
-            <span class="px-2 py-0.5 rounded-full text-xs font-semibold
-               bg-[var(--color-blue)] text-[var(--color-beige)]
-               mb-1 md:mb-0">
-              Dimanche
-            </span><strong>Atelier d’écriture</strong> — prompts, conseils, et un texte court à la clé.</span>
-          </li>
+            <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
+              <span class="inline-flex px-2 py-0.5 rounded-full text-s 
+                 bg-[var(--color-blue)] text-[var(--color-beige)]
+                 shrink-0 whitespace-nowrap mb-1 md:mb-0">
+                Samedi
+              </span>
+              <div>
+                <p class="text-base" style="font-size:16px;">
+                  <strong>Couture et pixel-art</strong>
+                  <span> — mini-séances, créneaux affichés sur place.</span>
+                </p>
+              </div>
+            </li>
+            <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
+              <span class="inline-flex px-2 py-0.5 rounded-full text-s 
+                 bg-[var(--color-blue)] text-[var(--color-beige)]
+                 shrink-0 whitespace-nowrap mb-1 md:mb-0">
+                Dimanche
+              </span>
+              <div>
+                <p class="text-base" style="font-size:16px;">
+                  <strong>Initiation peinture sur figurine</strong>
+                  <span> — matériel fourni, accompagnement pas à pas.</span>
+                </p>
+              </div>
+            </li>
+            <li class="flex flex-col items-start md:flex-row md:items-center gap-1.5 md:gap-2">
+              <span class="inline-flex px-2 py-0.5 rounded-full text-s 
+                 bg-[var(--color-blue)] text-[var(--color-beige)]
+                 shrink-0 whitespace-nowrap mb-1 md:mb-0">
+                Dimanche
+              </span>
+              <div>
+                <p class="text-base" style="font-size:16px;">
+                  <strong>Atelier d’écriture</strong>
+                  <span> — prompts, conseils, et un texte court à la clé.</span>
+                </p>
+              </div>
+            </li>
 
         </ul>
       </div>
@@ -317,14 +458,12 @@
 
     <!-- Encarts pratiques -->
     <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <div class="p-5 bg-white rounded-2xl shadow-md border border-black/5 text-[15px]">
-        <strong>Restauration sur place</strong> au profit de l’association <em>J’Existe</em> — options salées &
-        sucrées toute la journée.
-      </div>
-      <div class="p-5 bg-white rounded-2xl shadow-md border border-black/5 text-[15px]">
-        <strong>Tombola</strong> — lots offerts par exposants & partenaires, tirages dans la journée (infos à
-        l’accueil).
-      </div>
+      <p class="p-5 bg-white rounded-2xl shadow-md border border-black/5 text-[16px]">
+      <strong>Restauration</strong> au profit de l’association <em>J’Existe</em> — options salées et sucrées toute la journée.
+      </p>
+      <p class="p-5 bg-white rounded-2xl shadow-md border border-black/5 text-[16px]">
+      <strong>Tombola</strong> — lots offerts par exposants et partenaires, tirages dans la journée (infos à l’accueil).
+      </p>
     </div>
   </section>
 
@@ -489,13 +628,6 @@
           class="group relative block overflow-hidden rounded-2xl">
           <img
             src="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_grande_salle_partie_5_4032_2268_800_450.webp"
-            alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
-            loading="lazy">
-        </a>
-        <a href="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_toto_bonne_ambiance_4032_2268_800_450.webp"
-          class="group relative block overflow-hidden rounded-2xl">
-          <img
-            src="galerie_anciennes_années/salon_de_limaginaire_2024_exposants_toto_bonne_ambiance_4032_2268_800_450.webp"
             alt="Salon 2023" class="w-full h-48 md:h-56 lg:h-48 object-cover transition group-hover:scale-105"
             loading="lazy">
         </a>
