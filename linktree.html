@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salon de l'Imaginaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+@font-face {
+    font-family: "MVBoli";
+    src: url("mvboli.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    --maincolor : #b15996 ;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+    color:white;
+}
+
+/* Fond flouté */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("Affiche_sans_details.png") center center/cover no-repeat;
+    filter:blur(8px);
+    transform:scale(1.1);
+    z-index:-2;
+}
+
+/* Assombrissement */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    z-index:-1;
+}
+
+.container{
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+}
+
+.logo{
+    width:140px;
+    height:140px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:2rem;
+    margin-bottom:10px;
+    font-family: 'MVBoli', sans-serif;
+}
+
+.subtitle{
+    margin-bottom:30px;
+    opacity:.85;
+}
+
+.links{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.link{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 22px;
+
+    text-decoration:none;
+    color: var(--maincolor);
+
+    background:rgba(255, 255, 255, 0.70);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:18px;
+
+    backdrop-filter:blur(10px);
+
+    transition:all .3s ease;
+}
+
+.link:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,0.20);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.link-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.link svg{
+    width:24px;
+    height:24px;
+    fill:var(--maincolor);
+    flex-shrink:0;
+}
+
+.link span{
+    font-weight:600;
+}
+
+.arrow{
+    font-size:1.5rem;
+    opacity:.7;
+    transition:.3s;
+}
+
+.link:hover .arrow{
+    transform:translateX(5px);
+    opacity:1;
+}
+
+.footer{
+    margin-top:25px;
+    font-size:0.85rem;
+    opacity:.7;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <img src="logo_communaute_de_limaginaire.webp" alt="Logo Association Communauté de l'Imaginaire" class="logo">
+
+    <h1>Salon de l'Imaginaire</h1>
+
+    <p class="subtitle">
+        Retrouvez toutes les informations de l'événement
+    </p>
+
+    <div class="links">
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/salondelimaginaire?igsh=emJ4cWJ0YnBxNmw4"
+       target="_blank"
+       class="link">
+
+        <div class="link-left">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm11 2a1 1 0 110 2 1 1 0 010-2zm-6 2a6 6 0 110 12 6 6 0 010-12zm0 2a4 4 0 100 8 4 4 0 000-8z"/>
+            </svg>
+
+            <span>Instagram</span>
+
+        </div>
+
+        <span class="arrow">›</span>
+
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/salondelimaginaire"
+       target="_blank"
+       class="link">
+
+        <div class="link-left">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6h1.5V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7v3h3v8h3.5z"/>
+            </svg>
+
+            <span>Facebook</span>
+
+        </div>
+
+        <span class="arrow">›</span>
+
+    </a>
+
+    <!-- Site Web -->
+    <a href="https://www.salondelimaginaire.fr/"
+       target="_blank"
+       class="link">
+
+        <div class="link-left">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 9h-3.1a15.5 15.5 0 00-1.3-5A8.03 8.03 0 0118.9 11zM12 4c1 1.2 1.9 3.5 2.2 7H9.8c.3-3.5 1.2-5.8 2.2-7zm-2.5 2a15.5 15.5 0 00-1.3 5H5.1A8.03 8.03 0 019.5 6zM5.1 13h3.1a15.5 15.5 0 001.3 5A8.03 8.03 0 015.1 13zm6.9 7c-1-1.2-1.9-3.5-2.2-7h4.4c-.3 3.5-1.2 5.8-2.2 7zm2.5-2a15.5 15.5 0 001.3-5h3.1a8.03 8.03 0 01-4.4 5z"/>
+            </svg>
+
+            <span>Site Web</span>
+
+        </div>
+
+        <span class="arrow">›</span>
+
+    </a>
+
+    <!-- Exposants -->
+    <a href="https://docs.google.com/forms/d/1g94ebOh_sggQA3HTMULmYiNzuGTxLk8pKuUyIwo1vSU"
+       target="_blank"
+       class="link">
+
+        <div class="link-left">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <path d="M4 8L6 4H18L20 8"/>
+
+    <path d="M4 8C4 9.5 5 10.5 6.5 10.5C8 10.5 9 9.5 9 8"/>
+    <path d="M9 8C9 9.5 10 10.5 12 10.5C14 10.5 15 9.5 15 8"/>
+    <path d="M15 8C15 9.5 16 10.5 17.5 10.5C19 10.5 20 9.5 20 8"/>
+
+    <path d="M6 10.5V20"/>
+    <path d="M18 10.5V20"/>
+
+    <path d="M6 20H18"/>
+
+    <path d="M6 14H18"/>
+
+</svg>
+
+            <span>Devenir Exposant</span>
+
+        </div>
+
+        <span class="arrow">›</span>
+
+    </a>
+
+    <!-- Association -->
+    <a href="https://docs.google.com/forms/d/1UtDPj0P5lzCh_tJXd9Egun7c7PxU5Y-mdTy7S3pQg6U"
+       target="_blank"
+       class="link">
+
+        <div class="link-left">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5A4.5 4.5 0 0 1 6.5 4c1.74 0 3.41.81 4.5 2.09A6.02 6.02 0 0 1 15.5 4 4.5 4.5 0 0 1 20 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+
+            <span>Adhérer à l'Association</span>
+
+        </div>
+
+        <span class="arrow">›</span>
+
+    </a>
+
+</div>
+
+    <div class="footer">
+        © Salon de l'Imaginaire
+    </div>
+
+</div>
+
+</body>
+</html>
