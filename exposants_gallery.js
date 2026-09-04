@@ -46,8 +46,8 @@ function renderCard(item){
 
   return `
     <article class="relative card-box mx-auto bg-[#F2E8B3] text-[#163A30]
-                   rounded-xl shadow-md p-4 sm:p-5 border-l-[10px]
-                   border-[${COL.accent}] overflow-hidden">
+                   rounded-xl shadow-md p-4 sm:p-5 overflow-hidden"
+             style="border-left:10px solid ${COL.accent};">
 
       <!-- média -->
       <div class="relative mb-3 rounded-xl overflow-hidden bg-white/10 card-media">
@@ -218,7 +218,8 @@ function getStep(){
 // ---------- Init ----------
 // --- remplace TOUTE ta fonction init() par ceci ---
 async function init(){
-  const res  = await fetch(JSON_URL, { cache: 'no-store' });
+  const res  = await fetch(JSON_URL, { cache: 'default' });
+  if (!res.ok) { console.error('exposants.json introuvable'); return; }
   const raw  = await res.json();
   const items= normalizeItems(raw);
 
@@ -270,6 +271,15 @@ async function init(){
       btnAll.textContent = 'Afficher tous les exposants';
       fitBiosIn(track);
     }
+  });
+
+  // 4bis) Navigation clavier sur le carrousel (accessibilite)
+  carousel.setAttribute('role', 'region');
+  carousel.setAttribute('aria-label', 'Carrousel des exposants');
+  carousel.setAttribute('tabindex', '0');
+  carousel.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); btnNext.click(); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); btnPrev.click(); }
   });
 
   // 5) Re-fit sur resize (auto-fit bio)

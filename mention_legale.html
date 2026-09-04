@@ -21,8 +21,25 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Typographie identique au site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <!-- Palette (identique au site) -->
   <style>
+    @font-face {
+      font-family: 'MV Boli';
+      src: url('font/mvboli.woff2') format('woff2'),
+           url('font/mvboli.ttf') format('truetype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    :root {
+      --ff-title: 'MV Boli', 'Segoe Print', cursive;
+      --ff-main: 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+    }
+    html, body { font-family: var(--ff-main); }
+    h1, h2, h3, h4 { font-family: var(--ff-title); font-weight: 400 !important; }
     :root{
       --color-blue:   #0A5A83; /* principal */
       --color-beige:  #F2E8B3; /* fond clair */
@@ -118,11 +135,37 @@
     </section>
 
 
+    <!-- Donnees personnelles (ancre #donnees du menu, auparavant inexistante) -->
+    <section id="donnees" class="p-6 bg-white rounded-2xl shadow border-l-4 border-[var(--color-accent)]">
+      <h2 class="font-bold text-xl text-[var(--color-blue)]">Données personnelles</h2>
+      <div class="prose text-[15px] mt-2">
+        <p><strong>Responsable de traitement :</strong> S.A.R.L Au Coin Du Dé, 62 rue Sadi Carnot, 27200 Vernon.</p>
+        <p><strong>Données collectées :</strong> le site ne comporte pas de formulaire. Seules des données de
+        navigation anonymisées sont collectées à des fins de mesure d’audience, et uniquement après votre
+        consentement. Si vous nous écrivez par e-mail, votre adresse et le contenu de votre message sont conservés
+        le temps nécessaire au traitement de votre demande.</p>
+        <p><strong>Base légale :</strong> consentement (mesure d’audience) et intérêt légitime (réponse aux
+        demandes de contact).</p>
+        <p><strong>Vos droits :</strong> accès, rectification, effacement, limitation, opposition et portabilité.
+        Pour les exercer : <a href="mailto:contact@aucoindude.fr">contact@aucoindude.fr</a>. Vous pouvez également
+        introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
+      </div>
+    </section>
+
     <!-- Cookies -->
     <section id="cookies" class="p-6 bg-white rounded-2xl shadow border-l-4 border-[var(--color-accent)]">
       <h2 class="font-bold text-xl text-[var(--color-blue)]">Cookies</h2>
       <div class="prose text-[15px] mt-2">
-        <p>Le site utilise des cookies strictement nécessaires à son fonctionnement (préférences d’affichage, sécurité).</p>
+        <p>Le site utilise deux catégories de cookies :</p>
+        <p><strong>Cookies strictement nécessaires</strong> — fonctionnement du site, mémorisation de votre choix
+        en matière de cookies. Ils ne requièrent pas votre consentement.</p>
+        <p><strong>Cookies de mesure d’audience</strong> — Google Analytics 4 et Google Tag Manager (Google Ireland Limited),
+        utilisés pour comprendre la fréquentation du site. Ces cookies ne sont déposés qu’<strong>après votre
+        consentement exprès</strong>, recueilli via le bandeau affiché lors de votre première visite. Durée de
+        conservation : 13 mois maximum. Les données peuvent être transférées hors de l’Union européenne dans le
+        cadre des clauses contractuelles types de la Commission européenne.</p>
+        <p>Vous pouvez modifier ou retirer votre choix à tout moment en supprimant les données de site de votre
+        navigateur, ou nous écrire à <a href="mailto:contact@aucoindude.fr">contact@aucoindude.fr</a>.</p>
       </div>
     </section>
 
@@ -169,9 +212,9 @@
   <!-- FOOTER court -->
   <footer class="bg-[var(--color-green)] text-[var(--color-beige)] mt-12">
     <div class="container mx-auto px-[5%] py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
-      <p>© 2025 Salon de l’Imaginaire et du Jeu — Tous droits réservés.</p>
+      <p>© 2026 Salon de l’Imaginaire et du Jeu — Tous droits réservés.</p>
       <nav class="flex flex-wrap gap-4">
-        <a href="/mentions-legales.html" class="hover:text-[var(--color-accent)]">Mentions légales</a> 
+        <a href="/mention_legale.html" class="hover:text-[var(--color-accent)]">Mentions légales</a> 
         <a href="/" class="hover:text-[var(--color-accent)]">Retour au site</a>
       </nav>
     </div>
