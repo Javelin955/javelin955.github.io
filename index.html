@@ -450,8 +450,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       #btn-next { right: .25rem; margin-right: 0; }
     }
   </style>
-  <!-- Reactiver quand la liste 2026 sera prete (voir section #invites) :
-  <script type="module" src="exposants_gallery.js" defer></script> -->
+  <style>
+    .prog-tab[aria-selected="true"] { background: var(--color-accent); color: var(--color-brown); }
+    .prog-tab[aria-selected="false"] { background: #fff; color: var(--color-green); }
+    .prog-bloc { background: #fff; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,.08); border-left: 4px solid var(--color-accent); padding: 1.5rem; }
+    .prog-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem .75rem; padding: .6rem 0; border-bottom: 1px dashed rgba(70,92,64,.2); }
+    .prog-item:last-child { border-bottom: 0; }
+    .prog-heure { display: inline-flex; padding: .1rem .55rem; border-radius: 999px; font-size: .85rem; background: var(--color-blue); color: var(--color-beige); white-space: nowrap; }
+    .prog-meta { font-size: .85rem; opacity: .8; }
+    .prog-lien { color: var(--color-blue); text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .expo-flash { outline: 4px solid var(--color-accent); outline-offset: 4px; border-radius: .9rem; transition: outline-color .6s; }
+  </style>
+  <script type="module" src="exposants_gallery.js"></script>
+  <script type="module" src="programme.js"></script>
 </head>
 
 <!-- Menu Burger -->
@@ -675,56 +686,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- PROGRAMME -->
   <section id="programme" class="container mx-auto px-[5%] py-10 bg-[var(--color-beige)] backdrop-blur-sm max-w-full">
     <h3 class="text-3xl font-bold text-[var(--color-brown)] mb-8">Au programme cette année</h3>
-    <div class="grid gap-6 lg:grid-cols-[1.6fr_1fr] items-stretch">
-      <!-- ANIMATIONS -->
-      <div class="p-6 sm:p-7 bg-white rounded-2xl shadow-md border-l-4 border-[var(--color-accent)] flex flex-col justify-center">
-        <h4 class="font-bold text-xl mb-4 text-[var(--color-blue)]">Animations et parties</h4>
-        <ul class="space-y-3 text-[15px] leading-relaxed">
-          <li class="flex flex-col items-start md:flex-row md:items-baseline gap-1.5 md:gap-3">
-            <span class="inline-flex px-2 py-0.5 rounded-full text-sm bg-[var(--color-blue)] text-[var(--color-beige)] shrink-0 whitespace-nowrap">Les 2 jours</span>
-            <span><strong>Jeux de rôle</strong> — tables d’initiation et parties découverte, encadrées par des maîtres de jeu.</span>
-          </li>
-          <li class="flex flex-col items-start md:flex-row md:items-baseline gap-1.5 md:gap-3">
-            <span class="inline-flex px-2 py-0.5 rounded-full text-sm bg-[var(--color-blue)] text-[var(--color-beige)] shrink-0 whitespace-nowrap">Les 2 jours</span>
-            <span><strong>Espace jeux de société</strong> — prêt de jeux, démonstrations et tournois ouverts à tous.</span>
-          </li>
-          <li class="flex flex-col items-start md:flex-row md:items-baseline gap-1.5 md:gap-3">
-            <span class="inline-flex px-2 py-0.5 rounded-full text-sm bg-[var(--color-blue)] text-[var(--color-beige)] shrink-0 whitespace-nowrap">Les 2 jours</span>
-            <span><strong>Dédicaces</strong> — rencontres avec les auteurs et illustrateurs présents.</span>
-          </li>
-        </ul>
-      </div>
-
-      <aside class="teaser-anim relative overflow-hidden rounded-2xl shadow-md
-                    bg-[var(--color-green)] text-[var(--color-beige)]
-                    p-6 sm:p-7 flex flex-col justify-center text-center">
-
-        <svg class="teaser-de" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-          <rect x="8" y="8" width="84" height="84" rx="18" fill="none" stroke="currentColor" stroke-width="5"/>
-          <circle cx="30" cy="30" r="7" fill="currentColor"/>
-          <circle cx="70" cy="30" r="7" fill="currentColor"/>
-          <circle cx="50" cy="50" r="7" fill="currentColor"/>
-          <circle cx="30" cy="70" r="7" fill="currentColor"/>
-          <circle cx="70" cy="70" r="7" fill="currentColor"/>
-        </svg>
-
-        <div class="relative z-10">
-          <span class="inline-flex px-3 py-1 rounded-full text-xs tracking-wider uppercase
-                       bg-[var(--color-accent)] text-[var(--color-brown)] font-semibold">
-            Prochainement
-          </span>
-
-          <p class="mt-3 text-3xl sm:text-[2.35rem] lg:text-[2.5rem] leading-[1.08]">
-            D’autres animations<br>sont prévues&nbsp;!
-          </p>
-
-          <span class="block mx-auto mt-4 w-14 h-[3px] rounded-full bg-[var(--color-accent)]"></span>
-
-          <p class="mt-4 text-sm sm:text-base opacity-90 leading-relaxed">
-            Nous les dévoilerons ici dès qu’elles seront confirmées.
-          </p>
-        </div>
-      </aside>
+    <div role="tablist" aria-label="Jours du salon" class="flex flex-wrap gap-3 mb-6">
+      <button type="button" role="tab" id="tab-samedi" aria-selected="true" aria-controls="prog-samedi" class="prog-tab px-6 py-2 rounded-lg font-semibold shadow-sm transition">Samedi 3 octobre</button>
+      <button type="button" role="tab" id="tab-dimanche" aria-selected="false" aria-controls="prog-dimanche" class="prog-tab px-6 py-2 rounded-lg font-semibold shadow-sm transition">Dimanche 4 octobre</button>
+    </div>
+    <div id="programme-contenu" aria-live="polite">
+      <p class="prog-bloc">Chargement du programme…</p>
     </div>
 
     <!-- Encarts pratiques -->
@@ -741,40 +708,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-  <!-- ============================================================
-       EXPOSANTS — EN ATTENTE D’ANNONCE
-       Le carrousel et la grille sont conserves plus bas, desactives.
-       POUR LES REACTIVER quand la liste 2026 sera prete :
-         1. supprimer ce bloc "exposants-bientot"
-         2. retirer l’attribut hidden de #exposants-liste
-         3. reactiver <script type="module" src="exposants_gallery.js">
-            dans le <head>
-         4. mettre a jour exposants.json (il contient encore 2025)
-       ============================================================ -->
-  <div class="flex items-center justify-between bg-[var(--color-green)] text-[var(--color-beige)] px-[5%] py-8">
+  <!-- EXPOSANTS -->
+  <div class="flex flex-wrap items-baseline justify-between gap-2 bg-[var(--color-green)] text-[var(--color-beige)] px-[5%] py-8">
     <h3 class="text-3xl">Les exposants 2026</h3>
+    <p class="text-sm sm:text-base opacity-90">42 auteurs, illustrateurs, artisans et associations</p>
   </div>
 
   <section id="invites" class="bg-[var(--color-green)] text-[var(--color-beige)] pb-16">
     <div class="container mx-auto px-[5%]">
 
-      <div id="exposants-bientot"
-        class="rounded-2xl border-2 border-dashed border-[var(--color-accent)]/60 bg-white/5 px-6 py-14 sm:py-20 text-center">
-        <p class="text-3xl sm:text-4xl md:text-5xl leading-tight">
-          Ça arrive bientôt&nbsp;!
-        </p>
-        <p class="mt-4 text-base sm:text-lg max-w-[620px] mx-auto opacity-95">
-          La liste des auteurs, illustrateurs, artisans-créateurs et associations
-          présents cette année est en cours de finalisation.
-          Elle sera publiée ici dès que possible.
-        </p>
-        <p class="mt-6 text-sm opacity-70">
-          Suivez-nous sur Facebook et Instagram pour ne rien manquer.
-        </p>
-      </div>
-
-      <!-- Carrousel + grille, conserves et desactives (voir commentaire ci-dessus) -->
-      <div id="exposants-liste" hidden>
+      <div id="exposants-liste">
         <div id="carousel" class="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           <div class="overflow-hidden rounded-xl">
             <div id="carousel-track" class="flex transition-transform duration-500 ease-out will-change-transform"

@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "name": "Cris Créations Pirou",
+    "role": "Objets & Luminaires",
+    "bio": "Création de luminaires sur base d’outils et d’objets anciens dans l’esprit steampunk.",
+    "photo_path": "photo_exposant/cris-creations-pirou.webp",
+    "reseaux": "https://www.facebook.com/photo/?fbid=1212843557544706",
+    "slug": "cris-creations-pirou",
+    "partenaire": false
+  },
+  {
+    "id": 2,
+    "name": "BGA3D",
+    "role": "Impression 3D",
+    "bio": "De l’univers du jeu à l’impression 3D, je crée figurines, inserts et objets personnalisés. Une idée, une envie ? Donnons-lui forme en 3D.",
+    "photo_path": "photo_exposant/bga3d.webp",
+    "reseaux": "https://www.instagram.com/bga_3d/",
+    "slug": "bga3d",
+    "partenaire": false
+  },
+  {
+    "id": 3,
+    "name": "Pomme-de-Renard",
+    "role": "Armurerie / Cosplay",
+    "bio": "Je vends des armes et armures faites pour le GN et le Cosplay.",
+    "photo_path": "photo_exposant/pomme-de-renard.webp",
+    "reseaux": "https://www.instagram.com/pomme_de_renard/",
+    "slug": "pomme-de-renard",
+    "partenaire": false
+  },
+  {
+    "id": 4,
+    "name": "La Bulle de Pinpin",
+    "role": "Objets & Curiosités",
+    "bio": "Objet de cabinet de curiosités.",
+    "photo_path": "photo_exposant/la-bulle-de-pinpin.webp",
+    "reseaux": "",
+    "slug": "la-bulle-de-pinpin",
+    "partenaire": false
+  },
+  {
+    "id": 5,
+    "name": "Les Histoires de Floki",
+    "role": "Bois & Corne",
+    "bio": "Je suis artisan dans l’univers païen. Je travaille le bois végétal mais aussi animal. Mon travail est donc basé sur la culture scandinave, à l’ère viking. Je travaille seul et à la main.",
+    "photo_path": "photo_exposant/les-histoires-de-floki.webp",
+    "reseaux": "https://www.instagram.com/leshistoiresdefloki/",
+    "slug": "les-histoires-de-floki",
+    "partenaire": false
+  },
+  {
+    "id": 6,
+    "name": "L’Atelier de Laevia",
+    "role": "Bijoux",
+    "bio": "Je m’appelle Sarah et je donne vie à des bijoux féériques inspirés de la nature et des univers merveilleux. Réalisées avec des végétaux immortalisés et des pierres naturelles, mes créations renferment de véritables mondes enchantés miniatures.",
+    "photo_path": "photo_exposant/l-atelier-de-laevia.webp",
+    "reseaux": "https://www.instagram.com/atelierdelaevia/",
+    "slug": "l-atelier-de-laevia",
+    "partenaire": false
+  },
+  {
+    "id": 7,
+    "name": "L’Ombre et la Flamme",
+    "role": "Forge & Coutellerie",
+    "bio": "Forgeron coutelier, je réalise à la forge des couteaux et objets forgés tels que décapsuleurs, broches médiévales, support à encens, porte-manteaux, tisonnier etc… Je réalise des stages d’initiation sur mesure pour créer son propre couteau ou tout autre projet.",
+    "photo_path": "photo_exposant/l-ombre-et-la-flamme.webp",
+    "reseaux": "https://www.instagram.com/lombre_et_la_flamme/",
+    "slug": "l-ombre-et-la-flamme",
+    "partenaire": false
+  },
+  {
+    "id": 8,
+    "name": "Patch et Pixel",
+    "role": "Broderie",
+    "bio": "Je suis une brodeuse compulsive ! Je transforme les idées en broderie !",
+    "photo_path": "photo_exposant/patch-et-pixel.webp",
+    "reseaux": "https://linktr.ee/patchetpixel",
+    "slug": "patch-et-pixel",
+    "partenaire": false
+  },
+  {
+    "id": 9,
+    "name": "La Botte Secrète",
+    "role": "Gourmandise",
+    "bio": "1ère chocolaterie cabinet de curiosités. Des chocolats d’exception dans un univers unique, entre art, gourmandise et émerveillement.",
+    "photo_path": "photo_exposant/la-botte-secrete.webp",
+    "reseaux": "https://www.instagram.com/bottesecrete95",
+    "slug": "la-botte-secrete",
+    "partenaire": false
+  },
+  {
+    "id": 10,
+    "name": "Jarcenciel Bijoux",
+    "role": "Bijoux",
+    "bio": "Création de bijoux artisanaux en verre de Murano, pierres naturelles, nacre, perles d’eau douce : colliers, bracelets, boucles d’oreilles etc.",
+    "photo_path": "photo_exposant/jarcenciel-bijoux.webp",
+    "reseaux": "https://www.instagram.com/jarcenciel/",
+    "slug": "jarcenciel-bijoux",
+    "partenaire": false
+  },
+  {
+    "id": 11,
+    "name": "L’Atelier de n’ours",
+    "role": "Cuir",
+    "bio": "Artisan du cuir spécialisé dans le repoussage et le travail à la main.",
+    "photo_path": "photo_exposant/l-atelier-de-n-ours.webp",
+    "reseaux": "https://www.instagram.com/atelierdenours",
+    "slug": "l-atelier-de-n-ours",
+    "partenaire": false
+  },
+  {
+    "id": 12,
+    "name": "Missrainette",
+    "role": "Créations & Bijoux",
+    "bio": "Mon travail mêle la sculpture, en argile polymère, de petits mondes imaginaires sous globe et la création de bijoux féeriques. Chaque pièce réalisée à la main est pensée pour faire voyager le visiteur dans un univers de légende et de magie.",
+    "photo_path": "photo_exposant/missrainette.webp",
+    "reseaux": "https://www.instagram.com/miss_rainette",
+    "slug": "missrainette",
+    "partenaire": false
+  },
+  {
+    "id": 13,
+    "name": "Légendes Celtes",
+    "role": "Cuir",
+    "bio": "Je crée à partir de cuir à tannage végétal toutes sortes d’objets de l’univers fantastique et geek en gravant à la main des motifs divers. Je peux également fabriquer l’objet de vos rêves sur mesure quel que soit le thème.",
+    "photo_path": "photo_exposant/legendes-celtes.webp",
+    "reseaux": "https://www.facebook.com/LegendesCeltes/",
+    "slug": "legendes-celtes",
+    "partenaire": false
+  },
+  {
+    "id": 14,
+    "name": "Wanosh1",
+    "role": "Upcycling & Déco",
+    "bio": "Un meuble un peu fatigué, démodé ou endommagé que tu voudrais remettre au goût du jour… De la vieille pipe de ton grand-père au pare-chocs de ta première voiture…",
+    "photo_path": "photo_exposant/wanosh1.webp",
+    "reseaux": "https://www.instagram.com/wanosh1",
+    "slug": "wanosh1",
+    "partenaire": false
+  },
+  {
+    "id": 15,
+    "name": "Ophelie Faerie",
+    "role": "Créations & Bijoux",
+    "bio": "Création d’objets magiques/ésotériques et de décoration ainsi que de bijoux.",
+    "photo_path": "photo_exposant/ophelie-faerie.webp",
+    "reseaux": "https://linktr.ee/opheliefaerie",
+    "slug": "ophelie-faerie",
+    "partenaire": false
+  },
+  {
+    "id": 16,
+    "name": "Les Ruchers des Gobelins",
+    "role": "Gourmandise (Miel)",
+    "bio": "Je vends ma production de miel local.",
+    "photo_path": "photo_exposant/les-ruchers-des-gobelins.webp",
+    "reseaux": "https://www.facebook.com/profile.php?id=61561120263149",
+    "slug": "les-ruchers-des-gobelins",
+    "partenaire": false
+  },
+  {
+    "id": 17,
+    "name": "Susie Norman",
+    "role": "Auteur",
+    "bio": "Écriture de romans fantastiques, jeunes adultes et adultes, urban fantasy, dystopie, romances fantastiques.",
+    "photo_path": "photo_exposant/susie-norman.webp",
+    "reseaux": "https://www.instagram.com/susie_la_fee/",
+    "slug": "susie-norman-auteure",
+    "partenaire": false
+  },
+  {
+    "id": 18,
+    "name": "Lucie Gauchet",
+    "role": "Auteur",
+    "bio": "Je suis autrice de fantasy, fantastique et merveilleux. Mes univers sont inspirés de la Nature et imprégnés de magie. À ce jour, deux recueils de nouvelles et un roman sont disponibles, la suite du roman sera disponible en septembre donc à retrouver lors de votre événement.",
+    "photo_path": "photo_exposant/lucie-gauchet.webp",
+    "reseaux": "https://www.instagram.com/parchelys/",
+    "slug": "lucie-gauchet",
+    "partenaire": false
+  },
+  {
+    "id": 19,
+    "name": "Claudie Charles",
+    "role": "Auteur / Illustrateur",
+    "bio": "Autrice et illustratrice, je donne vie à mes histoires avec mes mots et les couleurs. Créatrice de Toulu et de l’affiche de cette édition du Salon de l’Imaginaire et du Jeu.",
+    "photo_path": "photo_exposant/claudie-charles.webp",
+    "reseaux": "https://www.instagram.com/ohclaudiecharles/",
+    "slug": "claudie-charles",
+    "partenaire": true
+  },
+  {
+    "id": 20,
+    "name": "Mélanie Wency",
+    "role": "Auteur",
+    "bio": "Autrice de l’imaginaire, j’ai développé une addiction pour le café et les romances fantastiques. Je collectionne les « book boyfriends ». Je réalise également des marque-pages en perles pour accompagner mes romans.",
+    "photo_path": "photo_exposant/melanie-wency.webp",
+    "reseaux": "https://www.instagram.com/melaniewency/",
+    "slug": "melanie-wency",
+    "partenaire": false
+  },
+  {
+    "id": 21,
+    "name": "Khloé Laurens",
+    "role": "Auteur",
+    "bio": "Autrice auto-éditée depuis six ans, j’écris surtout de la romantasy. Loups-garous, dieux réincarnés, vampires, faes, sorcières et humains se mêlent dans mes différents univers allant de l’urban fantasy à la cosy fantasy, passant parfois même par la dystopie.",
+    "photo_path": "photo_exposant/khloe-laurens.webp",
+    "reseaux": "https://www.instagram.com/khloe_laurens_/",
+    "slug": "khloe-laurens",
+    "partenaire": false
+  },
+  {
+    "id": 22,
+    "name": "Benjamin Langrenay",
+    "role": "Auteur",
+    "bio": "Je suis Benjamin Langrenay, auteur de fantasy originaire de Normandie.",
+    "photo_path": "photo_exposant/benjamin-langrenay.webp",
+    "reseaux": "https://www.instagram.com/benjaminlangrenay.auteur",
+    "slug": "benjamin-langrenay",
+    "partenaire": false
+  },
+  {
+    "id": 23,
+    "name": "La Trinité de l'imaginaire - Sarah Hautin",
+    "role": "Auteur",
+    "bio": "Nous sommes trois amies auteures qui écrivons chacune des romans de fantasy ou fantastique. Sarah Hautin a écrit une saga sur le thème de la sorcellerie et des légendes celtes, dont le dernier tome doit sortir prochainement.",
+    "photo_path": "photo_exposant/trinite-sarah-hautin.webp",
+    "reseaux": "https://www.instagram.com/sarah_auteur",
+    "slug": "la-trinite-de-l-imaginaire-sarah-hautin",
+    "partenaire": false
+  },
+  {
+    "id": 24,
+    "name": "La Trinité de l'imaginaire - Isabelle Maurel",
+    "role": "Auteur",
+    "bio": "Nous sommes trois amies auteures qui écrivons chacune des romans de fantasy ou fantastique. Isabelle Maurel de son côté est l’auteure d’un one shot et d’une saga en 4 tomes de fantasy dans des mondes imaginaires.",
+    "photo_path": "photo_exposant/trinite-isabelle-maurel.webp",
+    "reseaux": "https://www.instagram.com/isabelle_maurel_auteure",
+    "slug": "la-trinite-de-l-imaginaire-isabelle-maurel",
+    "partenaire": false
+  },
+  {
+    "id": 25,
+    "name": "La Trinité de l'imaginaire - Kaelyn S.B",
+    "role": "Auteur",
+    "bio": "Nous sommes trois amies auteures qui écrivons chacune des romans de fantasy ou fantastique. Kaelyn S.B a à son actif plusieurs sagas et one shots avec de la fantasy médiévale, du thriller fantastique ou encore de la romantasy.",
+    "photo_path": "photo_exposant/trinite-kaelyn-s-b.webp",
+    "reseaux": "https://www.instagram.com/kaelyn.s.b",
+    "slug": "la-trinite-de-l-imaginaire-kaelyn-s-b",
+    "partenaire": false
+  },
+  {
+    "id": 26,
+    "name": "Pauline Cachan",
+    "role": "Auteur",
+    "bio": "Autrice de l’imaginaire en auto-édition, je vous embarque dans des univers de fantasy, médiéval ou urban fantasy. Plongez dans des mondes peuplés de créatures, rencontrez des personnages gris aux histoires sombres, et succombez à l’amour même dans le chaos…",
+    "photo_path": "photo_exposant/pauline-cachan.webp",
+    "reseaux": "https://www.instagram.com/paulinecachan/",
+    "slug": "pauline-cachan",
+    "partenaire": false
+  },
+  {
+    "id": 27,
+    "name": "Marie Roger",
+    "role": "Auteur",
+    "bio": "Je suis romancière et actuellement j’ai publié les trois premiers tomes de la saga « Minetka », une épopée fantastique imprégnée de magie et de mystère. J’aime les histoires qui font voyager à travers l’univers et des mondes où le réel et l’imaginaire s’entremêlent.",
+    "photo_path": "photo_exposant/marie-roger.webp",
+    "reseaux": "https://www.instagram.com/marie_roger_auteur/",
+    "slug": "marie-roger",
+    "partenaire": false
+  },
+  {
+    "id": 28,
+    "name": "Osméosis",
+    "role": "Auteur",
+    "bio": "Romancier et nouvelliste de fantasy, Ronan a créé un univers littéraire dans lequel il revisite la mythologie scandinave, théâtre de tous ses récits.",
+    "photo_path": "photo_exposant/osmeosis.webp",
+    "reseaux": "https://www.facebook.com/RonanGouedard.auteur",
+    "slug": "osmeosis",
+    "partenaire": false
+  },
+  {
+    "id": 29,
+    "name": "Les Nominés du Néombre",
+    "role": "Créateur de jeux",
+    "bio": "Accomplissez des quêtes pour aider les Nominés et découvrez les secrets des terres vermaliennes. 700 cartes, de nombreuses zones à explorer, des possibilités, de la stratégie et de la difficulté qui s’intensifient !",
+    "photo_path": "photo_exposant/les-nomines-du-neombre.webp",
+    "reseaux": "https://www.instagram.com/les_nomines/",
+    "slug": "les-nomines-du-neombre",
+    "partenaire": false
+  },
+  {
+    "id": 30,
+    "name": "Mentérès JDR",
+    "role": "Créateur de jeux",
+    "bio": "Les Chroniques de Mentérès est un jeu de rôle indépendant français basé sur un système D100, avec une prise en main rapide idéale pour les MJ et joueurs débutants.",
+    "photo_path": "photo_exposant/menteres-jdr.webp",
+    "reseaux": "https://www.instagram.com/menteres_jdr/",
+    "slug": "menteres-jdr",
+    "partenaire": false
+  },
+  {
+    "id": 31,
+    "name": "Kaputopia",
+    "role": "Créateur de jeux",
+    "bio": "Kaputopia est un jeu coopératif et évolutif futuriste. C’est un jeu de plateau phygital qui mêle plateau physique et smartphone pour une expérience immersive. En 2124, vous incarnez les Kaputeurz, une bande de héros cherchant à renverser le C.I.E qui contrôle la ville de Saketa.",
+    "photo_path": "photo_exposant/kaputopia.webp",
+    "reseaux": "https://www.instagram.com/kaputopia_le_jeu/",
+    "slug": "kaputopia",
+    "partenaire": false
+  },
+  {
+    "id": 32,
+    "name": "Auteur en herbe",
+    "role": "Créateur de jeux",
+    "bio": "Voisinage est un prototype de jeu de construction de tableau et de draft ouvert. De 1 à 5 joueurs, agencez votre maison dans le quartier de Beasteria Lane en disposant vos cartes de façon à gagner un maximum de points.",
+    "photo_path": "photo_exposant/auteur-en-herbe.webp",
+    "reseaux": "https://www.instagram.com/jeuxchevrerie/",
+    "slug": "auteur-en-herbe",
+    "partenaire": false
+  },
+  {
+    "id": 33,
+    "name": "Au coin du Dé",
+    "role": "Association – Jeux de société",
+    "bio": "Une boutique de jeux de société, jeux de cartes, jeux de rôles et jeux de figurines ainsi qu’un café ludique à Vernon en Normandie.",
+    "photo_path": "photo_exposant/au-coin-du-de.webp",
+    "reseaux": "https://www.instagram.com/aucoindude/",
+    "slug": "au-coin-du-de",
+    "partenaire": true
+  },
+  {
+    "id": 34,
+    "name": "La Compagnie Littéraire",
+    "role": "Éditeur",
+    "bio": "La Compagnie Littéraire est une maison d’édition indépendante parisienne fondée en 2004.",
+    "photo_path": "photo_exposant/la-compagnie-litteraire.webp",
+    "reseaux": "https://www.instagram.com/compagnielitteraire/",
+    "slug": "la-compagnie-litteraire",
+    "partenaire": false
+  },
+  {
+    "id": 35,
+    "name": "Go Club Vernon",
+    "role": "Association",
+    "bio": "Le jeu de go est un jeu de stratégie asiatique qui consiste à faire un territoire plus grand que son adversaire en posant, à tour de rôle, des pierres blanches et noires sur les intersections d’une grille appelée goban.",
+    "photo_path": "photo_exposant/go-club-vernon.webp",
+    "reseaux": "",
+    "slug": "go-club-vernon",
+    "partenaire": false
+  },
+  {
+    "id": 36,
+    "name": "Les Héritiers de Château Gaillard",
+    "role": "Association – Reconstitution historique",
+    "bio": "Reconstitution médiévale autour de l’époque de Richard Cœur de Lion, Philippe Auguste et du Château-Gaillard des Andelys. Campement, combats, vie quotidienne, artisanat…",
+    "photo_path": "photo_exposant/les-heritiers-de-chateau-gaillard.webp",
+    "reseaux": "https://www.facebook.com/lesheritiers.chateaugaillard/",
+    "slug": "les-heritiers-de-chateau-gaillard",
+    "partenaire": false
+  },
+  {
+    "id": 37,
+    "name": "Cartes En Seine",
+    "role": "Association – Jeux de cartes",
+    "bio": "Fondée en 2008, Cartes en Seine est une association dynamique basée à Vernon (Eure), dédiée à la promotion des jeux de cartes à collectionner (TCG) à travers l’organisation d’événements conviviaux, compétitifs et pédagogiques.",
+    "photo_path": "photo_exposant/cartes-en-seine.webp",
+    "reseaux": "",
+    "slug": "cartes-en-seine",
+    "partenaire": false
+  },
+  {
+    "id": 38,
+    "name": "Arpenteurs du Vexin",
+    "role": "Association – Jeu de rôle",
+    "bio": "L’association des Arpenteurs du Vexin a pour vocation de faire découvrir et pratiquer le jeu de rôle sur la région de Vernon. Nous officions 2 à 3 soirées par mois, le vendredi ou le samedi. Les Arpenteurs naviguent dans des mondes aussi divers que Star Wars, Warhammer Fantasy, Vampire, Chroniques Oubliées, The Witcher, L’Appel de Cthulhu, Shadowrun, et plein d’autres. Alors débutant comme confirmé, tu peux nous contacter via notre Facebook/Instagram/mail.",
+    "photo_path": "",
+    "reseaux": "",
+    "slug": "arpenteurs-du-vexin",
+    "partenaire": false
+  },
+  {
+    "id": 39,
+    "name": "ML Arts & Créations",
+    "role": "Illustrateur",
+    "bio": "Illustrations / peintures / dessins.",
+    "photo_path": "photo_exposant/ml-arts-creations.webp",
+    "reseaux": "https://www.facebook.com/MLArtsetcreations/",
+    "slug": "ml-arts-creations",
+    "partenaire": false
+  },
+  {
+    "id": 40,
+    "name": "Le bestiaire de l’entre monde",
+    "role": "Illustrateur",
+    "bio": "À travers mon univers dark fantasy, je donne vie à un bestiaire unique à collectionner, où chaque créature cache des indices permettant de résoudre une mystérieuse énigme.",
+    "photo_path": "photo_exposant/le-bestiaire-de-l-entre-monde.webp",
+    "reseaux": "https://www.instagram.com/dravina.tt",
+    "slug": "le-bestiaire-de-lentre-monde",
+    "partenaire": false
+  },
+  {
+    "id": 41,
+    "name": "Léa Gosselin",
+    "role": "Illustrateur",
+    "bio": "Léa Gosselin est illustratrice et graphiste diplômée de l’École Nationale Supérieure des Beaux-Arts de Lyon.",
+    "photo_path": "photo_exposant/lea-gosselin.webp",
+    "reseaux": "https://www.instagram.com/imleag",
+    "slug": "lea-gosselin",
+    "partenaire": false
+  },
+  {
+    "id": 42,
+    "name": "Les Belliqueux",
+    "role": "Illustrateur",
+    "bio": "Nous sommes deux illustrateurs indépendants originaires de la région, en la présence de Jillvalart et Manon-Lou The Witch.",
+    "photo_path": "photo_exposant/les-belliqueux.webp",
+    "reseaux": "https://www.instagram.com/manonlou.thewitch/",
+    "slug": "les-belliqueux",
+    "partenaire": false
+  }
+]

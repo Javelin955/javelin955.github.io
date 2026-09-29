@@ -1,7 +1,9 @@
-// exposants_gallery.js — carrousel 1/2/3 cartes, aléatoire, bouton "tout afficher", auto-fit des bios
-const JSON_URL    = 'exposants.json';
-const PATH_PREFIX = 'photo_exposant/';
-const PAGE_SIZE   = 3;            // 3 cartes max par vue (1 en mobile, 2 en md, 3 en xl)
+// exposants_gallery.js — carrousel 1/2/3/4 cartes, aléatoire, bouton "tout afficher", auto-fit des bios
+const JSON_URL    = 'exposants_2026.json';
+const PATH_PREFIX = 'photo_exposant_2026/';
+const PAGE_SIZE   = 4;            // 4 cartes max par vue (1 en mobile, 2 en md, 3 en xl, 4 en 2xl)
+const FALLBACK    = 'logo_communaute_de_limaginaire.webp';
+const BIO_MAX     = 170;
 
 const COL = {
   blue:  '#0A5A83',
@@ -11,9 +13,36 @@ const COL = {
   brown: '#401E12',
 };
 
+(() => {
+  if (document.getElementById('expo-layout-css')) return;
+  const st = document.createElement('style');
+  st.id = 'expo-layout-css';
+  st.textContent = `
+    #invites { padding-top: 2.5rem; }
+    #all-grid { margin-top: 0 !important; padding-bottom: 1rem; justify-items: center; }
+    @media (min-width: 1536px) {
+      :root { --cw: min(300px, calc((min(100vw, 1440px) - 12rem) / 4.18)); }
+      #carousel { max-width: 1440px !important; }
+      #all-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+    }
+    @media (min-width: 1280px) and (max-width: 1535.98px) {
+      :root { --cw: min(300px, calc((100vw - 12rem) / 3.12)); }
+    }
+  `;
+  document.head.appendChild(st);
+})();
+
 // ---------- Helpers ----------
 const basename = (p='') => String(p).split(/[/\\]+/).pop() || 'placeholder.jpg';
-const toWebPhotoURL = (p) => PATH_PREFIX + basename(p);
+const toWebPhotoURL = (p) => p ? PATH_PREFIX + basename(p) : FALLBACK;
+const safeURL = (u='') => /^https?:\/\//i.test(String(u).trim()) ? String(u).trim() : '';
+const cutBio = (t='') => {
+  const s = String(t).trim();
+  if (s.length <= BIO_MAX) return s;
+  const c = s.slice(0, BIO_MAX);
+  return c.slice(0, Math.max(c.lastIndexOf(' '), BIO_MAX - 20)).replace(/[\s,;:.!?–-]+$/, '') + '…';
+};
+const visClass = (i) => ['', 'hidden md:block', 'hidden xl:block', 'hidden 2xl:block'][i] ?? 'hidden';
 const esc = (s='') => String(s)
   .replaceAll('&','&amp;').replaceAll('<','&lt;')
   .replaceAll('>','&gt;').replaceAll('"','&quot;')
@@ -41,11 +70,12 @@ function pageFromBag(arr, start, size = PAGE_SIZE) {
 
 // ---------- Card renderer ----------
 function renderCard(item){
-  const { number, name='', role='', bio='', photo_path='' } = item;
+  const { name='', role='', bio='', photo_path='', slug='', reseaux='', partenaire=false } = item;
   const photoURL = toWebPhotoURL(photo_path);
+  const lien = safeURL(reseaux);
 
   return `
-    <article class="relative card-box mx-auto bg-[#F2E8B3] text-[#163A30]
+    <article ${slug ? `data-slug="${esc(slug)}"` : ''} class="relative card-box mx-auto bg-[#F2E8B3] text-[#163A30]
                    rounded-xl shadow-md p-4 sm:p-5 overflow-hidden"
              style="border-left:10px solid ${COL.accent};">
 
@@ -55,24 +85,28 @@ function renderCard(item){
              class="absolute inset-0 w-full h-full object-cover blur-md scale-110"
              onerror="this.style.display='none';"/>
         <div class="absolute inset-0 bg-black/10"></div>
+        ${partenaire ? `<span class="absolute top-2 left-2 z-10 px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wide bg-[#BBBF3B] text-[#401E12] shadow">Partenaire</span>` : ''}
         <img src="${esc(photoURL)}" alt="Photo de ${esc(name)}"
              class="absolute inset-0 w-full h-full object-contain p-2 sm:p-3"
              loading="lazy"
-             onerror="this.onerror=null;this.src='${PATH_PREFIX}placeholder.jpg';"/>
+             onerror="this.onerror=null;this.src='${FALLBACK}';"/>
       </div>
 
       <!-- textes (tailles basées sur --cw, ajustées ensuite par auto-fit) -->
-      <h4 class="font-bold text-[#0A5A83] leading-tight"
-          style="font-size:calc(var(--cw)*0.07); line-height:1.15;">${esc(name)}</h4>
-      <p class="opacity-90" style="font-size:calc(var(--cw)*0.045); margin-top:.25rem;">
+      <h4 class="font-bold text-[#0A5A83] leading-tight" title="${esc(name)}"
+          style="font-size:calc(var(--cw)*0.07); line-height:1.15; height:2.3em; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden;">${esc(name)}</h4>
+      <p class="opacity-90" style="font-size:calc(var(--cw)*0.045); margin-top:.25rem; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
         ${esc(role)}
       </p>
 
       <div class="card-text" style="margin-top:.5rem;">
         <p class="bio-txt" style="font-size:calc(var(--cw)*0.043); line-height:1.45; margin:0;">
-          ${esc(bio)}
+          ${esc(cutBio(bio))}
         </p>
       </div>
+      <div style="height:1.75rem; margin-top:.75rem;">${lien ? `<a href="${esc(lien)}" target="_blank" rel="noopener"
+         class="inline-flex text-sm font-semibold text-[#0A5A83] underline decoration-[#BBBF3B] decoration-2 underline-offset-2 hover:opacity-80">
+         Suivre sur les réseaux ↗</a>` : ''}</div>
     </article>
   `;
 }
@@ -83,9 +117,7 @@ function pageHTML(page) {
   return `
     <div class="min-w-full flex justify-center items-stretch" style="gap:calc(var(--cw)*0.06);">
       ${page.map((it,i)=>{
-        // visible: 1ère tjs ; 2e >= md ; 3e >= xl
-        const vis = i===0 ? '' : (i===1 ? 'hidden md:block' : 'hidden xl:block');
-        return `<div class="card-col ${vis}">${renderCard(it)}</div>`;
+        return `<div class="card-col ${visClass(i)}">${renderCard(it)}</div>`;
       }).join('')}
     </div>
   `;
@@ -123,7 +155,7 @@ function fitBioInCard(cardEl) {
     p.style.fontSize = size + 'px';
   }
 }
-function fitBiosIn(container){ container.querySelectorAll('.card-box').forEach(fitBioInCard); }
+function fitBiosIn(){}
 function debounce(fn,t=120){ let id; return (...a)=>{ clearTimeout(id); id=setTimeout(()=>fn(...a),t); }; }
 
 // ---------- Data helpers ----------
@@ -134,6 +166,9 @@ function normalizeItems(raw){
     role:   r.role   ?? r.metier   ?? r.fonction ?? '',
     bio:    r.bio    ?? r.description ?? '',
     photo_path: r.photo_path ?? r.photo ?? r.image ?? r.visuel ?? '',
+    slug:   r.slug ?? '',
+    reseaux: r.reseaux ?? '',
+    partenaire: r.partenaire === true,
   }));
 }
 
@@ -174,8 +209,7 @@ async function slideTo(trackEl, nextPage, dir='next', duration=500){
   incoming.className = 'min-w-full flex justify-center items-stretch';
   incoming.setAttribute('style','gap:calc(var(--cw)*0.06);');
   incoming.innerHTML = nextPage.map((it,i)=>{
-    const vis = i===0 ? '' : (i===1 ? 'hidden md:block' : 'hidden xl:block');
-    return `<div class="card-col ${vis}">${renderCard(it)}</div>`;
+    return `<div class="card-col ${visClass(i)}">${renderCard(it)}</div>`;
   }).join('');
 
   if (dir==='next'){
@@ -204,13 +238,14 @@ async function slideTo(trackEl, nextPage, dir='next', duration=500){
 // ---------- All view ----------
 function mountAll(items, gridEl){
   gridEl.innerHTML = items.map(it => `
-    <div class="card-box mx-auto">${renderCard(it)}</div>
+    <div id="expo-${esc(it.slug || it.number)}" class="card-box mx-auto scroll-mt-28">${renderCard(it)}</div>
   `).join('');
   fitBiosIn(gridEl);
 }
 
 function getStep(){
-  if (window.matchMedia('(min-width:1280px)').matches) return 3; // xl et +
+  if (window.matchMedia('(min-width:1536px)').matches) return 4; // 2xl et +
+  if (window.matchMedia('(min-width:1280px)').matches) return 3; // xl
   if (window.matchMedia('(min-width:768px)').matches)  return 2; // md à < xl
   return 1;                                                     // mobile
 }
@@ -218,9 +253,18 @@ function getStep(){
 // ---------- Init ----------
 // --- remplace TOUTE ta fonction init() par ceci ---
 async function init(){
-  const res  = await fetch(JSON_URL, { cache: 'default' });
-  if (!res.ok) { console.error('exposants.json introuvable'); return; }
-  const raw  = await res.json();
+  let raw;
+  try {
+    const res = await fetch(JSON_URL, { cache: 'default' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    raw = await res.json();
+    if (!Array.isArray(raw) || !raw.length) throw new Error('liste vide');
+  } catch (err) {
+    console.error('[exposants] chargement impossible :', err);
+    const zone = document.getElementById('exposants-liste');
+    if (zone) zone.innerHTML = `<p class="text-center text-lg py-10">La liste des exposants n’a pas pu être chargée. Rechargez la page ou retrouvez-les sur nos réseaux.</p>`;
+    return;
+  }
   const items= normalizeItems(raw);
 
   // DOM
@@ -281,6 +325,20 @@ async function init(){
     if (e.key === 'ArrowRight') { e.preventDefault(); btnNext.click(); }
     if (e.key === 'ArrowLeft')  { e.preventDefault(); btnPrev.click(); }
   });
+
+  document.addEventListener('exposant:show', (e) => {
+    if (allGrid.classList.contains('hidden')) btnAll.click();
+    const card = document.getElementById(`expo-${e.detail}`);
+    if (!card) { document.getElementById('invites')?.scrollIntoView({ behavior: 'smooth' }); return; }
+    requestAnimationFrame(() => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.add('expo-flash');
+      setTimeout(() => card.classList.remove('expo-flash'), 2200);
+    });
+  });
+  if (location.hash.startsWith('#expo-')) {
+    document.dispatchEvent(new CustomEvent('exposant:show', { detail: location.hash.slice(6) }));
+  }
 
   // 5) Re-fit sur resize (auto-fit bio)
   window.addEventListener('resize', debounce(()=>{

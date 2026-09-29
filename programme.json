@@ -1,0 +1,284 @@
+{
+  "edition": "2026",
+  "jours": [
+    {
+      "id": "samedi",
+      "label": "Samedi 3 octobre",
+      "blocs": [
+        {
+          "titre": "En accès libre, toute la journée",
+          "horaire": "10h00-18h00",
+          "items": [
+            {
+              "titre": "Jeux de société en libre accès",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": null
+            },
+            {
+              "titre": "Initiation Jeu de Rôles avec les Arpenteurs",
+              "debut": null,
+              "fin": null,
+              "lieu": "Petite salle",
+              "places": null,
+              "exposant": "arpenteurs-du-vexin"
+            },
+            {
+              "titre": "Les Nominés du Néombre",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": "les-nomines-du-neombre"
+            },
+            {
+              "titre": "Voisinage",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": "auteur-en-herbe"
+            },
+            {
+              "titre": "Kaputopia",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": "kaputopia"
+            },
+            {
+              "titre": "Les Chroniques de Mentérès + Gallax",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": "menteres-jdr"
+            }
+          ]
+        },
+        {
+          "titre": "L’après-midi, ça continue !",
+          "items": [
+            {
+              "titre": "Atelier d’écriture avec Osméosis",
+              "debut": "14h00",
+              "fin": "15h30",
+              "lieu": "Petite salle",
+              "places": 6,
+              "exposant": "osmeosis"
+            },
+            {
+              "titre": "Scellé MTG The Hobbit",
+              "debut": "13h15",
+              "fin": "18h00",
+              "lieu": null,
+              "places": 8,
+              "exposant": null
+            },
+            {
+              "titre": "Tournoi Lorcana",
+              "debut": "14h00",
+              "fin": "18h00",
+              "lieu": null,
+              "places": 36,
+              "exposant": null,
+              "note": "Ligue adulte 24 places · Ligue enfants 12 places"
+            },
+            {
+              "titre": "Tournoi Transorient Express",
+              "debut": "14h00",
+              "fin": "18h00",
+              "lieu": "Étage",
+              "places": 8,
+              "exposant": null
+            },
+            {
+              "titre": "Démo MTG 1994",
+              "debut": "14h00",
+              "fin": "18h00",
+              "lieu": "Petite salle",
+              "places": 6,
+              "exposant": null
+            }
+          ]
+        },
+        {
+          "titre": "Initiations TCG",
+          "lieu": "Petite salle",
+          "items": [
+            {
+              "titre": "Disney Lorcana",
+              "debut": "10h00",
+              "fin": "15h00",
+              "lieu": null,
+              "places": null,
+              "exposant": null
+            },
+            {
+              "titre": "League of Legends Riftbound",
+              "debut": "10h00",
+              "fin": "15h00",
+              "lieu": null,
+              "places": null,
+              "exposant": null
+            },
+            {
+              "titre": "One Piece",
+              "debut": "10h00",
+              "fin": "15h00",
+              "lieu": null,
+              "places": null,
+              "exposant": null
+            },
+            {
+              "titre": "Pokémon",
+              "debut": "14h00",
+              "fin": "18h00",
+              "lieu": null,
+              "places": null,
+              "exposant": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dimanche",
+      "label": "Dimanche 4 octobre",
+      "blocs": [
+        {
+          "titre": "En accès libre, toute la journée",
+          "horaire": "10h00-18h00",
+          "items": [
+            {
+              "titre": "Jeux de société en libre accès",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": null
+            },
+            {
+              "titre": "Initiation Jeu de Rôles avec les Arpenteurs",
+              "debut": null,
+              "fin": null,
+              "lieu": "Petite salle",
+              "places": null,
+              "exposant": "arpenteurs-du-vexin"
+            },
+            {
+              "titre": "Les Nominés du Néombre",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": "les-nomines-du-neombre"
+            },
+            {
+              "titre": "Voisinage",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": "auteur-en-herbe"
+            },
+            {
+              "titre": "Kaputopia",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": "kaputopia"
+            },
+            {
+              "titre": "Les Chroniques de Mentérès + Gallax",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": "menteres-jdr"
+            },
+            {
+              "titre": "Covenia avec Nicolas Valle",
+              "debut": null,
+              "fin": null,
+              "lieu": "Étage",
+              "places": null,
+              "exposant": null
+            }
+          ]
+        },
+        {
+          "titre": "L’après-midi, ça continue !",
+          "items": [
+            {
+              "titre": "Tournoi Riftbound Skirmish",
+              "debut": "10h00",
+              "fin": "18h00",
+              "lieu": "Petite salle",
+              "places": 32,
+              "exposant": null
+            },
+            {
+              "titre": "Scellé MTG Chaos NYC",
+              "debut": "14h00",
+              "fin": "18h00",
+              "lieu": "Petite salle",
+              "places": 12,
+              "exposant": null
+            },
+            {
+              "titre": "Tournoi Forêt Mixte",
+              "debut": "14h00",
+              "fin": "18h00",
+              "lieu": "Étage",
+              "places": 16,
+              "exposant": null
+            }
+          ]
+        },
+        {
+          "titre": "Initiations TCG",
+          "lieu": "Petite salle",
+          "items": [
+            {
+              "titre": "Disney Lorcana",
+              "debut": "14h00",
+              "fin": "17h00",
+              "lieu": null,
+              "places": null,
+              "exposant": null
+            },
+            {
+              "titre": "League of Legends Riftbound",
+              "debut": "14h00",
+              "fin": "17h00",
+              "lieu": null,
+              "places": null,
+              "exposant": null
+            },
+            {
+              "titre": "One Piece",
+              "debut": "14h00",
+              "fin": "17h00",
+              "lieu": null,
+              "places": null,
+              "exposant": null
+            },
+            {
+              "titre": "Pokémon",
+              "debut": "10h00",
+              "fin": "18h00",
+              "lieu": null,
+              "places": null,
+              "exposant": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
